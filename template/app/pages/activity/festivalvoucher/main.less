@@ -1,0 +1,164 @@
+/**
+ * Created by lqq.li on 16/8/3.
+ */
+body, .qt-wrapper {
+	background: #260422;
+}
+
+.hide {
+	display: none!important;
+}
+
+.header {
+	height: 5.5rem;
+	background: url(http://simg1.qunarzz.com/site/images/zhuanti/huodong/20160803_qixi_header.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.card {
+	margin: 0 .9rem;
+	border-radius: 5px;
+	background: #ffeba6;
+	&.mt5 {
+		margin-top: -.5rem;
+	}
+	.font-big {
+		display: inline-block;
+		width: 100%;
+		font-size: .4rem;
+		line-height: .6rem;
+		text-align: center;
+		font-weight: 500;
+	}
+	.voucher-info {
+		display: flex;
+		align-items: center;
+		color: #bc1b22;
+		p {
+			padding: .35rem;
+			font-size: .33rem;
+			span {
+
+			}
+			.currency {
+				font-family: arial, sans-serif;
+				font-size: .28rem;
+			}
+			.price {
+				margin-left: .05rem;
+				font-size: .5rem;
+				line-height: 1em;
+			}
+			&.left {
+				flex: 1;
+				line-height: .4rem;
+				border-right: 1px dashed #abaaaa;
+				span {
+					display: inline-block;
+					width: 100%;
+					text-align: center;
+				}
+			}
+			&.right {
+				width: 1.7rem;
+				text-align: center;
+				.sub-txt {
+					font-size: .25rem;
+				}
+			}
+		}
+	}
+	.over {
+		padding: .4rem;
+		text-align: center;
+		color: #bc1b22;
+		font-weight: bold;
+		p {
+			font-size: .32rem;
+		}
+	}
+}
+
+.operate {
+	margin: .4rem .9rem 0;
+	overflow: hidden;
+	.input-box {
+		padding: .33rem .24rem .35rem;
+		background: #720b52;
+		border-radius: 5px;
+		p {
+			input {
+				padding: .24rem .28rem;
+				background: #450732;
+				border: none;
+				outline: none;
+				border-radius: 5px;
+				font-size: .28rem;
+				color: #fff;
+			}
+			&.vcode-line {
+				position: relative;
+				margin-top: .33rem;
+				.code-box {
+					display: inline-block;
+					margin-right: 1.96rem;
+				}
+				.get-vcode {
+					position: absolute;
+					width: 1.76rem;
+					padding: 0;
+					right: 0;
+					top: 0;
+					background: #ffeba6;
+					border: none;
+					outline: none;
+					border-radius: 5px;
+					color: #36194f;
+					font-size: .28rem;
+					line-height: .65rem;
+					text-align: center;
+				}
+			}
+			.err-tips {
+				display: inline-block;
+				margin-top: .1rem;
+				margin-left: .2rem;
+				color: #fae36f;
+			}
+		}
+		.submit {
+			margin-top: .5rem;
+		}
+	}
+	.btn-box {
+		margin-top: .33rem;
+	}
+	.submit {
+		width: 100%;
+		background: #b67761;
+		border: none;
+		border-radius: 5px;
+		outline: none;
+		color: #450732;
+		font-size: .28rem;
+		line-height: .72rem;
+		text-align: center;
+		&.active {
+			background: #fae36f;
+		}
+	}
+}
+
+.go-other {
+	margin-top: 1.5rem;
+	color: #fae36f;
+	text-align: center;
+	p {
+		font-size: .28rem;
+	}
+	.jump-btn {
+		font-size: .36rem;
+		font-weight: 500;
+		line-height: .7rem;
+	}
+}

@@ -1,0 +1,46 @@
+.qt-switch {
+    position: relative;
+    width: 50px;
+    height: 28px;
+    line-height: 28px;
+    font-size: .9em !important;
+    border-radius: 14px;
+    display: inline-block;
+    text-align: center;
+    background-color: #aaa;
+}
+.qt-switch.active {
+    background-color: #17a4bd;
+}
+
+.switch-handle {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 14px;
+    border: 1px solid #aaa;
+    background: #fff;
+    -webkit-transition: left 0.3s ease-in-out,border-radius 0.1s ease-in-out;
+    transition: left 0.3s ease-in-out,border-radius 0.1s ease-in-out;
+}
+
+.qt-switch.active .switch-handle {
+    left: 22px;
+    border-radius:14px;
+    border: 1px solid #17a4bd;
+}
+
+[data-on]:before {
+    content: attr(data-off) !important;
+    margin-left: 30px;
+    color: #fff;
+}
+
+[data-on].active:before {
+    content: attr(data-on) !important;
+    margin-right: 30px;
+    margin-left: 0;
+}

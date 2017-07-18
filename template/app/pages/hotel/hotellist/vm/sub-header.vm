@@ -1,0 +1,28 @@
+#if(!$!data.recTitle)
+<div class="search-head">
+    <div class="qt-grid qt-font12 search-box qt-mlr10 qt-mb10">
+        <div class="qt-blue time-condition">
+            #if($!req.type == 2)
+            <p class="single-date" data-date="$!req.checkInDate">住<span
+                    class="qt-ml5">$!req.checkInDate.substring(5)</span></p>
+            #else
+            <p data-date="$!req.checkInDate">住<span class="qt-ml5">$!req.checkInDate.substring(5)</span></p>
+            <p data-date="$!req.checkOutDate">离<span class="qt-ml5">$!req.checkOutDate.substring(5)</span></p>
+            #end
+        </div>
+        <div class="icon arrow-down-4 qt-blue"></div>
+        <div class="icon search qt-grey key-search-icon"></div>
+        <div class="key-search" data-type="key" data-dname="$!req.keywords" data-qname="$!req.keywords">#if(
+            !$!req.keywords || $!req.keywords == '') 酒店名/地名 #else $!req.keywords #end
+        </div>
+        <div #if(!$!req.keywords || $!req.keywords == '')style="display:none"#end class="icon cancel-circle qt-grey empty-keywords"></div>
+    </div>
+    <span id="toggleMap" class="icon map qt-white qt-font20"></span>
+</div>
+<ul class="qt-grid qt-center qt-bb-x1 condition-select">
+<li id="sort-btn" class="qt-bl-x1 sort-btn"><span>推荐排序</span><i class="icon arrow-down-4 qt-grey"></i></li>
+<li id="star-btn" class="qt-bl-x1 star-btn"><span>星级价格</span><i class="icon arrow-down-4 qt-grey"></i></li>
+<li id="location-btn" class="qt-bl-x1 location-btn"><span>位置区域</span><i class="icon arrow-down-4 qt-grey"></i></li>
+<li id="filter-btn" class="qt-bl-x1 filter-btn"><span>筛选</span><i class="icon arrow-down-4 qt-grey"></i><i class="qt-hide qt-white count"></i></li>
+</ul>
+#end

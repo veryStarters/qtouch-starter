@@ -1,0 +1,572 @@
+/**
+ * zhan.chen
+ * 2015.11
+ */
+@import "../../common/sub-pages/imagelist/imagelist";
+@import "../../../common/css/animate.less";
+@import '../../../common/component/cricle/index.less';
+@import "../../../common/component/tabslider/tabslider";
+@import "../../../common/component/waterflow/waterflow";
+@import "js/comment/index";
+@import "../../common/sub-pages/imageview/imageview";
+@import "../../common/sub-pages/panoramaview/panoramaview";
+@import "../../../common/component/imagebrowser/imagebrowser";
+@import "../../common/sub-pages/map/main";
+@import "js/facilities/index";
+@import "../../common/sub-pages/calendar/calendar";
+@import "./comment-icon";
+
+.hd-banner {
+  position: relative;
+  padding: 0;
+  height: 160px;
+  img {
+    width: 100%;
+    animation: floatingUpDowm 16s infinite ease-in-out;
+  }
+  .hotel-info-mask {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    //background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+    padding: 5px;
+    height: 70px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .7));
+    .hotel-info-left {
+      flex: 1;
+      .hotel-name {
+        font-size: 16px;
+      }
+    }
+    .hotel-info-right {
+      font-size: 12px;
+      .imgcount {
+        background: #000;
+        padding: 0 5px;
+        border-radius: 6px;
+      }
+    }
+
+  }
+  .detail-back {
+    position: absolute;
+    display: block;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    margin: 10px;
+    background: rgba(0, 0, 0, .6);
+    opacity: .8;
+  }
+  .detail-home {
+    position: absolute;
+    display: block;
+    right: 0;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    margin: 10px;
+    background: rgba(0, 0, 0, .6);
+    opacity: .8;
+  }
+
+}
+
+.qt-list {
+  > .hd-listitem {
+    color: #333;
+    em {
+      padding: 0 2px;
+      font-style: normal;
+      &.hd-em {
+        font-size: 18px;
+      }
+    }
+  }
+  .text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+  }
+  .qt-arrow.r:after {
+    top: 45%;
+  }
+}
+
+body, .qt-wrapper {
+  background: #f0f3f5;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+ul.room-list-css {
+  color: #333;
+  background: none;
+  .price-wrap {
+    text-align: right;
+    margin-right: 30px;
+  }
+  .name-wrap {
+    flex: 1;
+  }
+  .no-flex {
+    display: block;
+  }
+  .bgf0 {
+    background: #f0f3f5;
+  }
+  .no-padding {
+    padding: 0;
+  }
+  .room-imgs {
+    font-size: 0;
+    padding: 5px 0 5px 10px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    > div {
+      display: inline-block;
+      width: 19.9%;
+      height: 60px;
+      box-sizing: border-box;
+      padding-right: 10px;
+      > div {
+        position: relative;
+      }
+    }
+  }
+  .img-mask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .5);
+    text-align: center;
+    > span {
+      position: absolute;
+      width: 100%;
+      font-size: 12px;
+      color: #fff;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+  .po-relative {
+    position: relative;
+  }
+  .order-btn {
+    text-align: center;
+    color: #fff;
+    background: #ff6600;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 48px;
+    &:before {
+      content: '订';
+      display: block;
+      line-height: 1.6;
+    }
+    > span {
+      display: block;
+      color: #ff6600;
+      background: #fff;
+      border: 1px solid;
+      border-radius: 0 0 5px 5px;
+      font-size: 14px;
+      padding: 0 2px 0 2px;
+    }
+  }
+
+  .room-content-head {
+    align-items: center;
+    &.active {
+      &.qt-arrow {
+        &:after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+    &.qt-arrow:after {
+      transition: all .3s linear;
+    }
+    &:active {
+      background: #f8f8f8;
+    }
+  }
+
+  > li {
+    padding: 0;
+    display: block;
+    background: #fff;
+    &:first-child:before {
+      top: -1px;
+    }
+    &:active {
+      background: #fff !important;
+    }
+
+    &.qt-grid {
+      width: 100%;
+      align-items: center;
+      display: flex;
+    }
+    &.qt-pa10 {
+      padding: 10px;
+    }
+    &[data-type="2"]{
+      &:last-child{
+        margin-top: 10px;
+      }
+      &:first-child{
+        &:before{
+          content: none;
+        }
+      }
+    }
+  }
+
+
+}
+
+.div-row {
+  display: flex;
+  background: #fff;
+  font-size: 14px;
+  align-items: flex-end;
+  &:active {
+    background: #f8f8f8 !important;
+  }
+}
+
+.time-select {
+
+}
+
+.hour-room {
+  display: inline-block;
+  color: #fff;
+  border-radius: 5px;
+  line-height: 20px;
+  width: 20px;
+}
+
+.color3 {
+  color: #333;
+}
+
+.bg-ching {
+  background: #f0f3f5 !important;
+}
+
+.separate-li {
+  height: 10px;
+  background: #f0f3f5;
+  &:active {
+    background: #f0f3f5 !important;
+  }
+}
+
+//.hour-room-li{
+//  border-top: 10px solid #f0f3f5;
+//}
+
+.pro-room-list, .pro-room-list-hour {
+  &:after {
+    content: none !important;
+  }
+  > li {
+    padding: 0 !important;
+    > div {
+      padding: 5px 10px;
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      align-items: center;
+      position: relative;
+    }
+
+  }
+  > li.show-all-room {
+    padding: 10px 0 !important;
+  }
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.lowest {
+  position: absolute;
+  font-size: 12px;
+  background: #ff4500;
+  z-index: 1;
+  color: #fff;
+  width: 70px;
+  left: -26px;
+  top: 2px;
+  text-align: center;
+  transform: scale(.6, .6) rotate(-45deg);
+}
+
+.ruleLayer {
+  background: #fff;
+  color: #333;
+  .ruleLayer-title {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bold;
+  }
+  .ruleLayer-list {
+    font-size: 0;
+    //display: flex;
+    //flex-wrap: wrap;
+    overflow: hidden;
+    margin: 10px 0;
+    > div {
+      display: flex;
+      width: 49.9%;
+      float: left;
+      box-sizing: border-box;
+      font-size: 14px;
+      > div:first-child {
+        color: #888;
+        width: 40px;
+      }
+      > div:nth-child(2) {
+        flex: 1;
+      }
+    }
+  }
+  .ruleLayer-info {
+    font-size: 14px;
+    padding: 10px 0;
+    line-height: 20px;
+    .ruleLayer-info-name {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 24px;
+      .tag {
+        padding: 1px 5px;
+        font-size: 12px;
+      }
+    }
+  }
+  .ruleLayer-content {
+    max-height: 300px;
+    overflow: scroll;
+  }
+  .ruleLayer-booking {
+    height: 45px;
+    margin: 0 -16px -18px -10px;
+    .ruleLayer-ota-price-info {
+      position: relative;
+      height: 45px;
+      font-size: 14px;
+      padding-left: 10px;
+      .ruleLayer-position {
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        .ruleLayer-ota-price-wrap {
+
+          .ruleLayer-ota-price {
+            font-size: 20px;
+            font-weight: bold;
+          }
+          .price-text {
+            i {
+              display: inline-block;
+              font-style: normal;
+              margin-left: 5px;
+            }
+          }
+          .price {
+            height: 22px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+    .ruleLayer-booking-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30%;
+      text-align: center;
+      color: #fff;
+      background: #ff4500;
+      line-height: 45px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 0 0 5px 0;
+      &:active {
+        background: #f60;
+      }
+    }
+  }
+}
+
+.circle {
+  width: 30px;
+  height: 30px
+}
+
+.loading-wrap {
+  text-align: center;
+  line-height: 55px;
+}
+
+.old-price-span {
+  padding-right: 2px;
+}
+
+.old-price {
+  line-height: 20px;
+  > span {
+    display: inline-block;
+  }
+}
+
+.qunar_mix span.price {
+  font-size: 20px;
+  display: inline-block;
+  position: relative;
+  line-height: 24px;
+  height: 24px;
+  width: 44px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+}
+
+.qunar_mix span.price i {
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  font-style: normal;
+  background: #f0f0f0;
+  height: 100%;
+}
+
+.qunar_mix1 span.price {
+  font-size: 12px;
+  display: inline-block;
+  position: relative;
+  line-height: 20px;
+  height: 20px;
+  width: 44px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+}
+
+.qunar_mix1 span.price i {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  font-style: normal;
+  background: #f0f0f0;
+  height: 100%;
+}
+
+.ruleLayer-ota-price-info {
+  .qunar_mix span.price i {
+    background: #fff;
+  }
+}
+
+.qt-page-header {
+  .title {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+  }
+}
+
+.room-icon {
+  text-align: center;
+  padding: 0 2px 0 1px;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 2px;
+  border: 1px solid;
+  margin: 0 2px 0 2px;
+}
+
+.best-icon {
+  color: #1ba9ba;
+  display: inline-block;
+  border: 1px solid;
+  font-size: 12px;
+  line-height: 14px;
+  padding-right: 2px;
+  border-radius: 2px;
+  margin: 0 2px 0 2px;
+
+  &:before {
+    content: '最';
+    padding-right: 2px;
+    display: inline-block;
+    background: #1ba9ba;
+    color: #fff;
+  }
+  > span {
+    display: inline-block;
+    padding-left: 1px;
+    line-height: 18px;
+  }
+}
+
+.font-green {
+	color: #6ab891;
+}
+
+.padding0 {
+  padding: 0 !important;
+}
+
+.pt-desc {
+  padding-right: 3px;
+}
+
+@-webkit-keyframes floatingUpDowm {
+  0% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-40px);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  95% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

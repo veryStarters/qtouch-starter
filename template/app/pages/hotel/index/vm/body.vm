@@ -1,0 +1,106 @@
+##顶部广告引入
+#renderAd('hotel-index-top-ad',$!commonParam.ads.hotel_index_top_ad)
+
+<div class="hd-banner">
+    #if($!commonParam.skin.header)
+    <nav class="icon previous page-back qt-white"></nav>
+    #end
+    <nav class="nearby-hotel qt-white">
+        <i class="icon q-near-hotel"></i>
+        <p>附近酒店</p>
+    </nav>
+    #if($!req.code && $!req.code != "")
+    <img src="http://simg1.qunarzz.com/site/images/wap/home/recommend/20160727_weixinbanner_750x375.jpg" />
+    #else
+    <img src="http://simg1.qunarzz.com/site/images/wap/home/recommend/20160509_banner_750x376.jpg" />
+    #end
+</div>
+<div class="qt-bb-x1 line-tab-box">
+    <ul class="qt-control-line-group">
+        <li class="qt-br-x1 active" data-for="normal-room">全日房</li>
+        <li data-for="hour-room">钟点房</li>
+    </ul>
+    <div class="line"></div>
+</div>
+
+<div class="condition-search">
+
+    <div id="normal-room" class="">
+        <div class="part-line-click qt-bb-x1 city-line">
+            <i class="mlf35 icon location-2"></i>
+            <div data-for="normal" class="mlf55 qt-light-grey qt-arrow r city-selected">选择城市</div>
+            <div class="my-location"><i class="icon target-2"></i><p>我的位置</p></div>
+        </div>
+        <div class="all-line-click qt-grid middle qt-arrow r time-select" data-timeselect="2">
+            <i class="mlf35 icon calendar"></i>
+            <ul class="qt-bb-x1">
+                <li class="" data-date="$!commonParam.currentDateStr">
+                    <span class="month">$!commonParam.currentDate[1]月</span>
+                    <span class="day">$!commonParam.currentDate[2]日</span>
+                    <span class="qt-font12 qt-mr5 qt-light-grey week">今天</span>
+                    <span class="qt-font12 qt-light-grey">入住</span>
+                </li>
+                <li class="" data-date="$!commonParam.tomorrowDateStr">
+                    <span class="month">$!commonParam.tomorrowDate[1]月</span>
+                    <span class="day">$!commonParam.tomorrowDate[2]日</span>
+                    <span class="qt-font12 qt-mr5 qt-light-grey week">明天</span>
+                    <span class="qt-font12 qt-mr5 qt-light-grey">离店</span>
+                    <span class="qt-font12 qt-light-grey night">共<span>1</span>晚</span>
+                </li>
+            </ul>
+        </div>
+        <div class="all-line-click qt-arrow r key-word-line">
+            <i class="mlf35 icon search2"></i>
+            <div data-for="normal" class="qt-bb-x1 key-word qt-light-grey">搜索酒店名、地名、地标</div>
+            <i class="qt-hide icon cancel-circle empty-keyword"></i>
+        </div>
+        <div class="part-line-click qt-bb-x1 qt-arrow r js-select-normal">
+            <i class="mlf35 icon q-star-price"></i>
+            <div data-for="normal" class="mlf55 star-price qt-light-grey"></div>
+            <i class="qt-hide icon cancel-circle empty-starprice"></i>
+        </div>
+    </div>
+    <div id="hour-room" class="qt-hide">
+        <div class="part-line-click qt-bb-x1 city-line">
+            <i class="mlf35 icon location-2"></i>
+            <div data-for="hour" class="mlf55 qt-light-grey qt-arrow r city-selected" data-city="">选择城市</div>
+            <div class="my-location"><i class="icon target-2"></i><p>我的位置</p></div>
+        </div>
+        <div class="all-line-click middle qt-arrow r time-select" data-timeselect="1">
+            <i class="mlf35 icon calendar"></i>
+            <ul class="qt-bb-x1">
+                <li class="lh34" data-date="$!commonParam.currentDateStr">
+                    <span class="month">$!commonParam.currentDate[1]月</span>
+                    <span class="day">$!commonParam.currentDate[2]日</span>
+                    <span class="qt-font12 qt-mr5 qt-light-grey week">今天</span>
+                    <span class="qt-font12 qt-light-grey">入住</span>
+                </li>
+            </ul>
+        </div>
+        <div class="all-line-click qt-arrow r key-word-line">
+            <i class="mlf35 icon search2"></i>
+            <div data-for="hour" class="qt-bb-x1 key-word qt-light-grey">搜索酒店名、地名、地标</div>
+            <i class="qt-hide icon cancel-circle empty-keyword"></i>
+        </div>
+        <div class="part-line-click qt-bb-x1 qt-arrow r js-select-hour">
+            <i class="mlf35 icon q-star-price"></i>
+            <div data-for="hour" class="mlf55 star-price qt-light-grey"></div>
+            <i class="qt-hide icon cancel-circle empty-starprice"></i>
+        </div>
+    </div>
+    <div class="submit-box">
+        <button class="submit qt-white">搜索</button>
+    </div>
+</div>
+<div class="qt-bt-x1 qt-grid other-link">
+    <p class="qt-br-x1 recent"><i class="icon q-browse-history orange"></i>最近浏览</p>
+    <p class="qt-br-x1 discover-hotel"><a href=""><i class="icon q-discover-hotel purple"></i>发现酒店</a></p>
+    <p class="order-list"><i class="icon q-order-list blue"></i>我的订单</p>
+</div>
+<!--<p class="search-tips guarantee"><i class="icon q-bao"></i><span>担保通,酒店预订全程保障</span></p>-->
+
+<!--<div class="qt-bb-x1 qt-bt-x1 qt-mtb10 qt-arrow r qt-hide discover-hotel"></div>-->
+
+##底部广告引入
+#renderAd('hotel-index-bottom-ad',$!commonParam.ads.hotel_index_bottom_ad)
+

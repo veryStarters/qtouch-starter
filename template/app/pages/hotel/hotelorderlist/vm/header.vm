@@ -1,0 +1,7 @@
+<nav class="icon left previous"></nav><h1 class="title qt-bb-x1">我的订单</h1>
+#if(!$!commonParam.isLogin)
+    <span class="right right-pos query-btn">查询</span>
+    <span class="right login">登录</span>
+#else
+    <span class="right query-btn">手机号查询</span>
+#end

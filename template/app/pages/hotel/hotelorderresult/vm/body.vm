@@ -1,0 +1,77 @@
+<div class="order-success-wrapper">
+  <div class="order-tips-wrapper qt-bb-x1">
+    <div class="order-tips">
+      <i class="icon checkmark ordersuccess"></i>
+      #if ($!req.paySuccsee)
+        #if ($!req.isVouch)
+        <h3>担保成功！</h3>
+        #else
+        <h3>支付成功！</h3>
+        #end
+      #else
+      <h3>订单提交成功！</h3>
+      #end
+    </div>
+    <div class="order-status-container qt-bb-x1">
+      #if ($!req.paySuccsee)
+        <p class="order-status-desc qt-font14">$!req.smsTips</p>
+      #else
+        #if ($!req.confirmType == 0)
+        <p class="order-status-desc qt-font14">$!req.smsTips</p>
+        #else
+        <p class="order-status-desc qt-font14">订单状态为“<span class="order-status">$!req.orderStatus</span>”, $!req.smsTips</p>
+        #end
+      #end
+    </div>
+
+    <div class="order-cost-wrapper">
+      #if ($!req.paySuccsee)
+        #if ($!req.isVouch)
+        <span class="order-pay-type">担保支付</span>
+        #else
+        <span class="order-pay-type">在线支付</span>
+        #end
+        <span class="order-cost">$!req.currencySign $!req.payMoney</span>
+      #else
+
+        #if ($!req.payType == 1)
+        ##现付
+        <span class="order-pay-type">到店支付</span>
+        <span class="order-cost">$!req.currencySign $!req.payMoney</span>
+          #if ($!data.isCashBack)
+          <p class="order-reback qt-font12"> $!req.ptTypeDesc</p>
+          #end
+        #end
+
+        #if ($!req.payType == 0 && $!req.confirmType != 0)
+        ##预付 先确认
+        <span class="order-pay-type">在线支付</span>
+        <span class="order-cost">$!req.currencySign $!req.payMoney</span>
+        <p class="order-reback qt-font12">确认房间预计需要15分钟，收到确认成功短信后，请在“订单详情页”按照提示完成支付。</p>
+        #end
+
+      #end
+    </div>
+  </div>
+
+  <div class="order-info-wrapper">
+    <p class="order-hotel-name">$!req.hotelName</p>
+    <span class="order-room-info">$!req.roomName</span><br/>
+    <span class="order-live-info">
+      <span class="livein-date">$!req.checkInDate</span>入住,
+      <span class="liveout-date">$!req.checkOutDate</span>离店
+      <span class="live-total">共 $!data.betweenDays 晚</span>#if ($!data.isGJ)（目的地时间）#end
+    </span><br/>
+    <span class="order-last">最晚到达</span><span class="lastest-arrive-tme">$!req.checkInDate $!req.arriveTime</span>
+  </div>
+
+  <div class="order-operation-wrapper qt-btb-x1">
+    #if (! ($!req.payType == 0 && $!req.confirmType != 0))
+    <div class="order-detail button w50">订单详情</div>
+    <div class="hotel-detail button w50">查看酒店</div>
+    #else
+    <div class="order-detail button w100">订单详情</div>
+    #end
+  </div>
+
+</div>

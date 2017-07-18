@@ -1,0 +1,175 @@
+.qt-header {
+    background: #fff;
+    color: #222;
+    .login {
+        z-index: 20;
+        width: 42px;
+    }
+    .query-btn {
+        z-index: 20;
+    }
+    .right-pos {
+        right: 50px;
+    }
+}
+
+.qt-sub-header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    overflow: hidden;
+}
+
+.qt-body {
+    top: 37px;
+}
+
+html, .qt-wrapper, .qt-body {
+    background: #e9e9e9;
+}
+
+.qt-tip{
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+    background-color: #fff5cd;
+}
+
+.condition-select {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+    font-size: 12px;
+    li {
+        flex: 1;
+        width: 25%;
+        line-height: 36px;
+        span {
+            display: inline-block;
+            width: 48px;
+            overflow: hidden;
+            white-space: nowrap;
+            vertical-align: middle;
+        }
+    }
+}
+.line {
+    position: absolute;
+    transition: all .3s ease-in;
+    background-color: #25a4bb;
+    top: 84px;
+    left: 0;
+    height: 3px;
+    z-index: 3;
+    overflow: hidden;
+}
+.right{
+    position:absolute;
+    top: 0;
+    right: 5px;
+    color: #000;
+}
+
+
+// 错误提示
+.load-failed {
+    display: block;
+    width: 100px;
+    height: 60px;
+    margin: 20% auto 0;
+    background-image: url("http://simg1.qunarzz.com/site/images/wap/hlist/failed-bg.png");
+    background-size: 100% 100%;
+}
+.errmsg {
+    padding-top: 10px;
+    line-height: 3em;
+    text-align: center;
+}
+
+// 结果list
+.order-result-list{
+    font-size: 14px;
+    background: #e9e9e9;
+    li{
+        margin-top: 10px;
+        background: #fff;
+        p {
+            padding: 0 10px 0 16px;
+        }
+    }
+    .order-info{
+
+        line-height: 2;
+        .order-title{
+            line-height: 40px;
+
+            .icon.q-near-hotel{
+                display: inline-block;
+                width: 18px;
+                height: 18px;
+                background: #f55;
+                color: #fff;
+                border-radius: 3px;
+                vertical-align: middle;
+                &:before {
+                    position: absolute;
+                    top: 0;
+                    left: 21px;
+                    line-height: 40px;
+                    font-size: 14px;
+                }
+            }
+
+            span {
+                vertical-align: middle;
+                font-weight: 600;
+            }
+        }
+        .order-detail {
+            padding: 10px 0;
+            line-height: 1.3em;
+            .hotelname{
+                display: inline-block;
+                width: 80%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .roomname{
+                width: 90%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .currency {
+                font-family: arial, sans-serif;
+                font-style: normal;
+            }
+        }
+    }
+}
+
+// 加载更多
+.load-more {
+    line-height: 44px;
+    .icon {
+        vertical-align: middle;
+    }
+}
+
+// 数据加载提示
+.data-loading {
+    z-index: 6;
+    top: 139px;
+    left: 50%;
+    margin-left: -73px;
+    border-radius: 5px;
+    background: #7b7b7b;
+    text-align: center;
+    width: 146px;
+    padding: 5px;
+    color: #fff;
+    font-size: 14px;
+    position: fixed;
+}

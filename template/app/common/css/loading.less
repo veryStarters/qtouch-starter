@@ -1,0 +1,64 @@
+.qt-loading {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 24px;
+    box-shadow: 0 0 2px #2187e7;
+    margin: 0 auto;
+    animation: sparkle 1s infinite ease-in-out;
+    &:before{
+        content: "";
+        display: block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        border-radius: 24px;
+        background-color: rgba(0, 0, 0, 0);
+        border: 5px solid rgba(37, 164, 187, 0.9);
+        opacity: .9;
+        border-right: 5px solid rgba(0, 0, 0, 0);
+        border-left: 5px solid rgba(0, 0, 0, 0);
+        animation: spin-outer 1s infinite ease-in-out;
+    }
+    &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0);
+        border: 3px solid rgba(37, 164, 187, 0.9);
+        opacity: .9;
+        border-left: 3px solid rgba(0, 0, 0, 0);
+        border-right: 3px solid rgba(0, 0, 0, 0);
+        border-radius: 8px;
+        box-shadow: 0 0 2px #25A4BB;
+        width: 8px;
+        height: 8px;
+        margin: 0 auto;
+        top: 10px;
+        left: 10px;
+        animation: spin-inner 1s infinite linear;
+    }
+}
+
+@keyframes spin-outer {
+    0% {
+        transform: rotate(-60deg);
+    }
+    100% {
+        transform: rotate(300deg);
+    }
+}
+
+@keyframes spin-inner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes sparkle {
+    50%{
+        box-shadow: 0 0 20px #2187e7;
+    }
+}

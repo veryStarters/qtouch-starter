@@ -1,0 +1,28 @@
+.z-waterflow {
+  width: 100%;
+  line-height: 0;
+  .wrapper {
+    width: 100%;
+    &::after {
+      content: "\0020";
+      display: table;
+  		line-height: 0;
+      clear: both;
+    }
+    >.colume {
+      float: left;
+      &:last-child {
+        margin-right: 0 !important;
+      }
+      >.item {
+        width: 100%;
+        background: url('http://img1.qunarzz.com/m_appPromotion/wap/1601/48/30a645a6cfe503f7.gif') no-repeat center;
+        >img {
+  			  opacity: 0;
+    			transition: opacity .35s linear;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

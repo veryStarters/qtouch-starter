@@ -1,0 +1,126 @@
+<div class="hd-banner qt-center qt-overflow">
+
+    #if($!commonParam.skin.header)
+    <nav class="icon previous detail-back page-back qt-white"></nav>
+    <nav class="icon home detail-home qt-white"></nav>
+    #end
+
+    <img class="hotelimage" src="$!data.info.imgurl"/>
+
+    <div class="hotel-info-mask">
+        <div class="hotel-info-left">
+            #if($!data.info.whenFitment && $!data.info.whenFitment !="")
+            <div class="hotel-decoration qt-font12">$!data.info.whenFitment年装修</div>
+            #end
+            <span class="hotel-name" data-gpoint="$!data.info.gpoint">$!data.info.name</span>
+            #if($!data.info.dangciText && $!data.info.dangciText !="")<span class="hotel-dangci"
+                                                                            data-dangci="$!data.info.dangciText">[$!data.info.dangciText]</span>#end
+        </div>
+        <div class="hotel-info-right">
+            #if($!data.info.imageCount && $!data.info.imageCount !="")<span
+                class="imgcount">$!data.info.imageCount张</span>#end
+        </div>
+    </div>
+
+</div>
+<ul class="qt-list color3 qt-font14">
+    <li class="qt-grid qt-arrow r comment " data-nocomment="#if($!data.info.commentCount == '0')true#end">
+        <div class="col10">
+            <span class="inline-block circle qt-blue" data-score="$!data.info.score">
+
+            </span>
+            #if(!$!data.info.commentCount || $!data.info.commentCount == '0')
+            <span class="inline-block qt-pl5">暂无评论</span>
+            #else
+            <span class="inline-block qt-pl5">好评:<em>$!data.goodCommentCount</em>条</span>
+            <span class="inline-block qt-pl5">差评:<em>$!data.badCommentCount</em>条</span>
+            #end
+        </div>
+        <div class="col2 qt-right qt-pr10">
+            <span class="qt-blue qt-font12">评论</span>
+        </div>
+    </li>
+    <li class="qt-grid qt-arrow r" data-for="map">
+        <div class="col10">
+            <div class="text-overflow qt-lh hotel-address">$!data.info.add</div>
+            <div class="text-overflow qt-font12 qt-lh">
+                #if($!data.info.area && $!data.info.area != "")<span
+                    class="qt-pr5 hotel-address">$!data.info.area</span>#end
+                #if($!data.info.distance && $!data.info.distance != "")<span>距您<span>$!data.info.distance</span></span>#end
+            </div>
+        </div>
+        <div class="col2 qt-right qt-pr10">
+            <span class="qt-blue qt-font12">地图</span>
+        </div>
+    </li>
+    <li class="qt-grid qt-arrow r facilities">
+        <div class="col10">
+            <div class="text-overflow qt-lh">
+                #if($!data.info.btime && $!data.info.btime !="")<span class="qt-pr5">$!data.info.btime年开业</span>#end
+                #if($!data.info.phone && $!data.info.phone !="")<span>电话$!data.info.phone</span>#end
+                <span class="">
+                    #if($!data.info.hasWiFI && $!data.info.hasWiFI !="")<i class="qt-grey icon wifi"></i>#end
+                    #if($!data.info.hasPark && $!data.info.hasPark !="")<i class="qt-grey icon q-parking"></i>#end
+                </span>
+            </div>
+            <!--<div class="text-overflow qt-lh">-->
+            <!--<i class="qt-blue icon wifi"></i>-->
+            <!--</div>-->
+        </div>
+        <div class="col2 qt-right qt-pr10">
+            <span class="qt-blue qt-font12">详情</span>
+        </div>
+    </li>
+</ul>
+#if($!data.isGJ == true)
+<div class="qt-pt10 qt-plr10 qt-center qt-orange">
+    入住和离店请按酒店当地标准时间选择
+</div>
+#end
+<div class="qt-arrow r div-row time-select qt-pa10 qt-grid qt-mt10 qt-bt-x1" data-in="$!req.checkInDate"
+     data-out="$!req.checkOutDate">
+    <div class="col10">
+        #if($!req.type == '2')
+        <span>$!req.checkInDate</span>
+        <span>入住</span>
+        #else
+        <span>$!req.checkInDate</span>
+        <span>入住</span>
+        <span class="qt-ml10">$!req.checkOutDate</span>
+        <span>离店</span>
+        #end
+    </div>
+    #if($!req.type != '2')
+    <div class="col2 qt-right qt-pr10">
+        <span class="qt-blue qt-font12">共<span class="count-day"></span>晚</span>
+    </div>
+    #end
+</div>
+
+#if($!req.type != '2')
+<ul class="qt-list qt-font14 color3 room-list-css room-list">
+    <div class="qt-bt-x1 loading-wrap room-loading">
+        <span class="qt-blue icon spinner"></span>
+        <span class="qt-blue">房型加载中....</span>
+    </div>
+</ul>
+#end
+
+<ul class="qt-list bgf0 room-list-css bg-ching pro-room-list-hour">
+    #if($!req.type == '2')
+    <div class="qt-bt-x1 loading-wrap">
+        <span class="qt-blue icon spinner"></span>
+        <span class="qt-blue">报价加载中....</span>
+    </div>
+    #end
+</ul>
+
+#if($!commonParam.skin.nearby)
+<ul class="qt-list qt-mt10 qt-font14 color3 other-hotel-list"></ul>
+#end
+
+#if($!commonParam.skin.roomtype_tip)
+<div class="qt-grey qt-font12 qt-pa10">
+    注：房型信息以代理商、酒店及订单填写页实际内容为准。
+</div>
+#end

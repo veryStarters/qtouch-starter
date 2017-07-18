@@ -1,0 +1,16 @@
+<div class="total-bar qt-grid qt-fixed">
+    <div class="qt-bt-x1 col8 qt-grid count">
+        <div class="col8 price single">
+            <p class="qt-font12" style="color: #ff3300">在线付款 &yen; <span class="t-price qt-font20">0</span></p>
+            <p class="grey qt-font12">
+                <span class="t-minus ml0"></span>
+            </p>
+        </div>
+        <div class="col4 tipbar qt-font12 qt-hide">
+            <span class="qt-arrow t">明细</span>
+        </div>
+    </div>
+    <div class="col4 btn-done">
+        完成
+    </div>
+</div>

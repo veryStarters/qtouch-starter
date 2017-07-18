@@ -1,0 +1,79 @@
+#if(!$!data.roomInfo)
+<div class="tips"  style="margin-bottom: 100px">
+    <p class="load-failed"></p>
+    <p class="qt-font12 qt-center info">抱歉，该报价已订满，请选择其他报价</p>
+</div>
+<div class="content">
+<ul></ul>
+</div>
+#else
+#set($roomInfo= $!data.roomInfo)
+<div class="qt-hide err-box">
+    <p class="icon notification err"><span></span></p>
+</div>
+<div class="base-info">
+    <p class="qt-font16 hotel-name">$!roomInfo.hotelName</p>
+
+    <p class="qt-font14 room-type">$!roomInfo.roomName</p>
+
+    #if($!req.isLM == 2)
+    <p class="qt-font12 qt-lh qt-grey time-range">
+        <span>$!roomInfo.staydays</span>
+    </p>
+    #else
+    <p class="qt-font12 qt-lh qt-grey time-range">
+        $!roomInfo.staydays #if($!data.isGJHotel)（当地时间） #end
+    </p>
+    #end
+
+    <p class="qt-font12 qt-lh qt-grey other">
+        <span>$!roomInfo.bedType</span>
+        <span>宽带$!roomInfo.webFree</span>
+        #if($!data.breakfast && $!data.breakfast.detail.size() > 0)
+        <span class="qt-blue qt-arrow r breakfast to-break-detail">$!data.breakfast.text</span>
+        #else
+        <span class="breakfast">$!data.breakfast.text</span>
+        #end
+    </p>
+</div>
+<ul class="order-option">
+    <li class="qt-bg-white qt-bt-x1 qt-bb-x1 room-option">
+        <p class="qt-blue loading">加载中…<i class="qt-ml5 icon spinner"></i></p>
+    </li>
+    <li class="qt-bg-white qt-bt-x1 qt-bb-x1 coupons-option">
+        <p class="qt-blue loading">加载中…<i class="qt-ml5 icon spinner"></i></p>
+    </li>
+    <li class="qt-bg-white qt-bt-x1 qt-bb-x1 personal-needs">
+        <p class="qt-blue loading">加载中…<i class="qt-ml5 icon spinner"></i></p>
+    </li>
+</ul>
+<div class="tip-box">
+<p>
+    <span class="title">代理商：</span>
+    <span class="content">$!roomInfo.otaName</span>
+    ###if($!roomInfo.otaLogo && $!roomInfo.otaLogo !="" )
+    ##<img src="$!roomInfo.otaLogo" />
+    ###end
+</p>
+<ul class="qt-font12 tips">
+    <li class="qt-blue qt-center qt-mt10 loading">加载中…<i class="qt-ml5 icon spinner"></i></li>
+</ul>
+<p class="qt-blue qt-font12 qt-hide more-tips">更多提示></p>
+</div>
+<div class="qt-bg-white qt-bt-x1 submit-box fixed">
+    #if($!roomInfo.payType == 0)
+    <div class="qt-font12 content price">
+        <p class="qt-orange main-content cur-price"><span class="type"></span><span>$!roomInfo.currencySign</span><span class="qt-font16 pay-price">$!data.priceInfos[0].totalPrice</span></p>
+        <p class="qt-hide qt-grey sub-content discount-price"></p>
+    </div>
+    #elseif($!roomInfo.payType == 1)
+    <div class="qt-font12 content price">
+        <p class="qt-orange main-content"><span class="type"></span><span>$!roomInfo.currencySign</span><span class="qt-font16 pay-price"></span></p>
+        <p class="qt-hide qt-grey sub-content"></p>
+    </div>
+    #end
+    <p class="qt-font12 qt-grey icon qt-arrow t detail-btn"><span>明细</span></p>
+    <div class="qt-white submit-btn">提交订单</div>
+</div>
+<div class="order-loading"></div>
+#end

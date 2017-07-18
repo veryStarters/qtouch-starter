@@ -1,0 +1,99 @@
+#**
+* Created by taoqili on 15/8/7.
+* VM模板公共宏定义
+*#
+##<!--普通页面渲染-->
+#macro(render, $style,$header,$subHeader,$body,$footer,$script )
+<html>
+<head>
+    <title>$!g_title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,shrink-to-fit=no,user-scalable=no,minimal-ui"
+          name="viewport"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <!-- UC默认竖屏` UC强制全屏 -->
+    <meta name="full-screen" content="yes"/>
+    <meta name="browsermode" content="application"/>
+    <!-- QQ强制竖屏` QQ强制全屏 -->
+    <meta name="x5-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="x5-page-mode" content="app"/>
+    <meta name="keywords" content="酒店, 酒店预订, 酒店查询, 订酒店, 宾馆预订">
+    <meta name="description" content="去哪儿网酒店预订频道提供国内外酒店预订，酒店报价查询，提供数十万家酒店、宾馆、客栈、连锁酒店、高端酒店、精品酒店的实时比价服务。">
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=http://m.qunar.com/index.jsp">
+    </noscript>
+    <link rel="apple-touch-icon-precomposed" href="/common/images/apple-touch-icon.png">
+    <link rel="stylesheet" href="/common/common.css"/>
+    $!style
+</head>
+<body>
+<div class="qt-wrapper">
+    <div class="qt-header-wrapper #if(!$!header)qt-hide#end">
+        <div class="qt-header fixed">$!header</div>
+    </div>
+    <div class="qt-scroll-wrapper">
+        <div class="qt-content">
+            <div class="qt-sub-header #if(!$!subHeader)qt-hide#end">$!subHeader</div>
+            <div class="qt-body" #if(!$!subHeader)style="padding-top:50px"#end>$!body</div>
+        </div>
+    </div>
+    <div class="qt-footer fixed #if(!$!footer)qt-hide#end">$!footer</div>
+</div>
+
+<div class="qt-pages-wrapper"></div>
+<div class="qt-page-loader" style="opacity:1;">
+    <span class="close-btn icon cancel-circle"></span>
+    <p class="loading-icon"></p>
+    <p class="loading-text"></p>
+</div>
+<div class="qt-tips qt-hide"></div>
+<div class="qt-mask"></div>
+<div class="qt-sidebar left"></div>
+<div class="qt-sidebar right"></div>
+<div class="qt-sidebar top"></div>
+<div class="qt-sidebar bottom"></div>
+<script>
+    window.COMMON_PARAM = $!commonParamStr || {};
+    window.FIRST_DATA = $!dataStr || {};
+    window.REQ = $!reqStr || {};
+</script>
+<script src="/common/common.js"></script>
+$!script
+
+## 部分渠道下载引导页
+#if($!commonParam.skin.full_download)
+<script src="http://m.qunar.com/zhuanti/touch.client.guidance.js"></script>
+#end
+</body>
+</html>
+#end
+
+##广告渲染
+#macro(renderAd, $name,$adStr )
+#if($name && $adStr && $!commonParam.skin.ad)
+<div class="$name ad">
+    <script src="$adStr"></script>
+</div>
+#end
+#end
+
+##下载浮层
+#macro(renderDownload )
+    #if(!$!req.isQunarClient)
+        #if($!commonParam.skin.appLayer)
+        <div class="qt-client-download qt-grid middle vertical">
+            <div class="col2">
+                <div class="logo"><i class="icon q-luotuo"></i></div></div>
+            <div class="col7 qt-font14">
+                <p class="qt-font16">去哪儿旅行</p>
+                <p>五折热门酒店，千元现金红包</p>
+            </div>
+            <div class="col2"><div class="download qt-ml10">下载</div></div>
+            <div class="col1"><i class="icon close qt-ml10"></i></div>
+        </div>
+        #end
+    #end
+#end

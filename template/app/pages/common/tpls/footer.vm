@@ -1,0 +1,7 @@
+<!--<img width="100%" src="module/common/image/{{@dpr}}toolbar.png"/>-->
+<ul class="qt-lh2 qt-pt10 qt-grey qt-border">
+    <li data-href="#"><i class="icon search"></i>订单</li>
+    <li data-href="#" class="qt-blue"><i class="icon q-luotuo"></i>首页</li>
+    <li data-href="#"><i class="icon podcast"></i>身边</li>
+    <li data-href="#"><i class="icon q-home"></i>我的</li>
+</ul>

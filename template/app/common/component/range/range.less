@@ -1,0 +1,77 @@
+@dropWidth: 2.2rem;
+@arrowWdith: (@dropWidth/2);
+.qt-range {
+    position: relative;
+    height: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    .drop {
+        position: absolute;
+        display: block;
+        z-index: 2;
+        top: 4px;
+        width: 30px;
+        height: 30px;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpBNUM1OTNEM0Y0MzRFNTExOEEyMEFBOTQ4MEMzRDFGNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxMDQ5RDJENDM1RTAxMUU1QTI4MkU0REJDRERDOTZDRiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxMDQ5RDJEMzM1RTAxMUU1QTI4MkU0REJDRERDOTZDRiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNSAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmRmOGQxNGE1LTUzNGYtNDY3My04Y2NiLWM5MTA5NWYwMGIzZiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBNUM1OTNEM0Y0MzRFNTExOEEyMEFBOTQ4MEMzRDFGNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Phj1y84AAAT1SURBVHja5JvPTxtHFMd312tMSbJqqC3SNpXaE5aIKcTqD4FUcWpRhdQ/AIm/oKKVAAmJI0IguHBuinpO20suwCXcc0iAA8g+8EMqre1CKVk7LeD1TufrvnEHp07wT7zDk57WIDzzPryZt29m3uha/UTnakiqS09ZGFdXerrSz3Uxqiph7D+7dF0XcKakfnr6SHWpX0aaI3W4Zukp1OV9uCUBdL2xwJLnBFwAGgqFbiwsLPT29PR8EgwGOy3Leq+lpaXDNM2bPp/vBr6Yy+VeOI6TOT8/T9m2/cvR0VF8Y2PjycTExPrh4eEL/idnpFkJnlUDXC2ojwAtrh2RSCS8trY2kUqlHnOQNKtQ8F20gbbQJtqmPgJilIC7iL2uAo+2cL3F9c7w8PBH29vb32Wz2RNWY0GbaBt9oC/qE30bjQDWaei2cQ329fXdi8Vi32NosjoL+kBf6BN9kw1mjaZlSVg/Da13l5eXvz49Pf2NNVh4nwn0DRvIFn89oA2aP7ej0Wh4d3f3Ibti2dvbewhbYBPZZtQa9q3R0dG+dDodY00isAU2wbZaQQvY4Ozs7CAfTr+yJhPYBNtoXlcFrQvPTk9Pf86j5R+sSQW2wUYJWq80QN0eGxv77CqCUyXBDLbSnC47kCHcW93d3Z3NNGcvM6dhM0Vvs5x5i3fc3f39/R+ZxwQ2w3ZiMC4zlJHFhFZWVkaZRwW2g4FYXjm0kadag4OD3Tyh/92rwLB9aGjoQxravtdF5Ts8hVtiHhcwUO5dMmrnvYskvRG5cSNyb1pwlPQy/hMdfGXygCkiWGXR0jLwf5H5ZicX/hL/UxVgsIAJbCJiG3IKubi4+IVpmm9qighYwCSnnIaUaAR6e3u/0hQTYgqIRETsIpqRSMQKhUKf1rKzRCKR12p/X42ACWxis6Cwyzg1NRU1DKNNNQ+DaXJyMkrAhgD2h8Ph+5qi0tXVdZ8WFAVgs729/QNVgYmt4OH8dqtlWe+rCkxsPnkO+1pbW99WFZjYfMLD+Tyav7NuqQrM2SyRT4shrYvjDxWFs7UJTkO7BoIsU86h87/jq4u/VAXmbH+Lk0pDfHAcx1YYGCeRrvAwPuSw66cqMGdLEqcrPJyzbXtfVWBiy4khDXLn+Ph4T1VgYnOEhwGcjcViz1QF3traAltWBnZmZmaeuq6rXKQG09zc3FPh4UL2xfWdZDL5mCkmYAIbMRbew6A/W19ff6Sah4npjBg1OQERm3gn12ETLx+44vH4yc7Ozk+qeJez/AwmEbBeyrE1xTbiR0ZGPtZesRGv1FEL9+wP2muOWgpexkHUdThME17OH5eurq5+41Vgbvu32iWPS0Ugyx+IHxwcPPIaLGzWyjgQL+yKYDj09/d3pdPpuFdgM5lMHDZrZZY8iKEtF7UkPVDUkqKilnatwuo8EbWDHihbOq62bEmez01fmDY/P/8lwbZqNazGa+bSw6qr8EpBX4vi0uJAJpcPJ66i4q4R5cMydHGB+FIDC8SXBgYG7lFSUfcC8eIhfuEKADfmAY+Wz+sQgZ+j7au6AlDs7QuXPLD2RBUcXfLIVAqJ76INtEXr2Zpd8mjUNZ6wZVl3cY3H7/dbhmG8AS7sN3EPpvGOt237ANd4Njc3n4yPjz+r1zWeZrioJW6ieeOiVqlhpf9riaG9fB1P7pNJOy4XruKxS47XcoH/EWAA7aWXxkEL1hMAAAAASUVORK5CYII=);
+        background-size: 100%;
+    }
+    .left {
+        left: 0px;
+    }
+    .right {
+        right: 0px;
+    }
+    .progress {
+        display: inline-block;
+        width: 94%;
+        height: .7rem;
+        border-radius: 500rem;
+        position: absolute;
+        top: .8rem;
+        left: 3%;
+        i {
+            position: absolute;
+            height: 100%;
+            display: block;
+            border-radius: 500rem;
+        }
+        .left {
+            left: 0px;
+            margin-left: -1px;
+        }
+        .right {
+            right: 0px;
+            margin-right: -1px;
+        }
+    }
+    .mark {
+        position: relative;
+        top: @dropWidth + @arrowWdith;
+        padding: 0px;
+        margin: 0 auto;
+        list-style-type: none;
+        li {
+            flex: 1;
+            text-align: center;
+            &:before {
+                content: "";
+                display: block;
+                width: 5px;
+                height: 5px;
+                background-color: #25a4bb;
+                border-radius: 50%;
+                margin-left: 0;
+            }
+            span {
+                font-family: "arial";
+                margin-left: -100%;
+                font-size: 12px;
+                white-space: nowrap;
+            }
+        }
+        li:last-child {
+            width: 2px;
+            flex: initial;
+        }
+    }
+}

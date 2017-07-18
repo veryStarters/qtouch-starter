@@ -1,0 +1,25 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿酒店 - 酒店预订, 酒店查询 -  去哪儿网 Qunar.com' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<link rel="stylesheet" href="/pages/hotel/hotelorderquery/main.css"/>
+#end
+
+##<!--头部模块定义-->
+#define ( $header )
+#parse('pages/hotel/hotelorderquery/vm/header.vm')
+#end
+
+##<!--主内容模块定义-->
+#define ( $body )
+#parse('pages/hotel/hotelorderquery/vm/body.vm')
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script src="/pages/hotel/hotelorderquery/main.js"></script>
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

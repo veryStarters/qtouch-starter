@@ -1,0 +1,144 @@
+/**
+ * zhan.chen
+ * 2015.12.8
+ */
+
+
+#qt_page_imageList {
+  background: #000;
+  .qt-page-header {
+    display: block;
+    background: #000;
+    ul.qt-control-group {
+      display: block;
+      height: 30px;
+      margin-top: 10px;
+      >li {
+        display: inline-block;
+        line-height: 26px;
+        i {
+          line-height: 26px;
+        }
+        &.active {
+          color: #000;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .qt-page-content {
+    background: #000;
+    .qt-page-sub-header {
+      background: #000;
+    }
+  }
+}
+
+.il-imglist {
+  width: 100%;
+  line-height: 120px;
+  font-size: 12px;
+  text-align: center;
+  color: #999;
+  background: #000;
+  .load-complete {
+    margin-top: 30px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #ccc;
+    text-align: center;
+  }
+}
+.il-imggroup{
+  z-index: 9;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 42px;
+  letter-spacing: -1px;
+  background: rgba(0, 0, 0, .78);
+  .qt-tabslider {
+    li {
+      padding-top: 2px;
+      line-height: 1.3;
+      .item {
+        border: none;
+        margin: 0;
+        p {
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+.il-panorama {
+  height: 100%;
+  margin-bottom: -50px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  .pano-loading, .pano-empty {
+    text-align: center;
+    height: 200px;
+    line-height: 200px;
+    font-size: 12px;
+    color: #999;
+  }
+  .pano-list {
+    height: 100%;
+    .group {
+      .type {
+        margin: 0 0 0 0.5rem;
+        width: 100%;
+        height: 27px;
+        line-height: 27px;
+        font-size: 14px;
+        font-weight: normal;
+        color: #fff;
+      }
+      .space {
+        width: 100%;
+        height: 0.25rem;
+      }
+      >ul {
+        display: inline-block;
+        font-size: 0;
+        background: #000;
+        .pano-pic {
+          position: relative;
+          display: inline-block;
+          margin: 0 0 0.25rem 0.25rem;
+          width: 5rem;
+          height: 5rem;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: block;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            font-size: 12px;
+            color: #fff;
+            background: rgba(0, 0, 0, .6);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: normal;
+          }
+        }
+      }
+    }
+  }
+}

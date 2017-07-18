@@ -1,0 +1,39 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿网' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<style>
+    .loading{margin-top:150px;width: 100%}
+    .share{
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+</style>
+#end
+
+#define ( $header )
+    <div class="title">去哪儿网</div>
+#end
+
+##<!--主内容模块定义-->
+#define ( $body )
+    <div class="loading qt-center"></div>
+    <div class="share">
+        <img width="100%"  alt="点击右上方下载">
+    </div>
+    <iframe id="iframe" class="qt-hide"></iframe>
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script src="/pages/client/index/main.js"></script>
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

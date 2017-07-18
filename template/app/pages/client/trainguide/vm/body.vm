@@ -1,0 +1,15 @@
+<table class="qt-ma10 qt-font14">
+    <tr>
+        <td class="qt-plr10">
+            <img width="20" src="http://img1.qunarzz.com/m_appPromotion/wap/1607/17/4d9e7d8abba2a69a.png" alt="">
+        </td>
+        <td class="qt-mlr10">
+            <p>钟点房 = 空调 + WIFI</p>
+            <p>发车还早,钟点房清凉候车</p>
+        </td>
+        <td class="qt-plr10">
+            <div class="qt-mr10 qt-border-x1 r5 skip qt-pa5 qt-bg-blue qt-white">我要休息</div>
+        </td>
+    </tr>
+</table>
+<iframe id="iframe" style="position:absolute;bottom:-1000px;display:none;"></iframe>

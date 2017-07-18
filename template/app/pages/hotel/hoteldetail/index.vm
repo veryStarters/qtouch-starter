@@ -1,0 +1,46 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿网--聪明你的旅行' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<link rel="stylesheet" href="/pages/hotel/hoteldetail/main.css"/>
+#end
+
+##<!--头部模块定义-->
+##define ( $header )
+#if(!$!commonParam.skin.header)
+##parse('pages/hotel/hoteldetail/vm/header.vm')
+#end
+##end
+
+
+#define ( $subHeader )
+##<!--副头部模块定义-->
+
+#end
+
+##<!--主内容模块定义-->
+#define ( $body )
+#parse('pages/hotel/hoteldetail/vm/body.vm')
+#end
+
+##<!--尾部模块定义-->
+#define ( $footer )
+#parse('pages/hotel/hoteldetail/vm/footer.vm')
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script src="/pages/hotel/hoteldetail/main.js"></script>
+<script src="http://m.qunar.com/zhuanti/20160317-redLayer.js"></script>
+#if($!data.isGJ != true)
+<script src="http://api.map.baidu.com/api?v=1.4a&ak=3bTDeMOIWun9DELpjhsfeO9W"></script>
+#else
+<script src="http://ditu.google.cn/maps/api/js?libraries=geometry&sensor=true&language=zhCN"></script>
+#end
+
+
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

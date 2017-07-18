@@ -1,0 +1,149 @@
+//background: #f3f3f3;
+.qt-body, .qt-page-body {
+  top:0;
+  padding: 0!important;
+}
+.myPrize {
+  position: relative;
+  min-height: 100%;
+  background: #ffffff;
+}
+.prize {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: #333;
+  .pr-img-wrap {
+    padding-right: 10px;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+    }
+  }
+  .pr-content-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-right: 10px;
+    .pr-content {
+      flex: 1;
+      line-height: 20px;
+      > div {
+        &:first-child {
+          //font-weight: bold;
+        }
+        &:last-child {
+          color: #888;
+          font-size: 12px;
+        }
+      }
+    }
+    .pr-exchange {
+      width: 65px;
+      line-height: 30px;
+      background: #1ba9ba;
+      text-align: center;
+      color: #fff;
+      border-radius: 3px;
+      &:not(.pr-disable):active {
+        background: #1996a5;
+      }
+    }
+  }
+  .pr-disable {
+    background: #ccc !important;
+  }
+}
+.more_prize {
+  text-align: center;
+  padding: 10px 0;
+  &:active {
+    background: #fff;
+  }
+}
+.no-prize {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  > img {
+    width: 100%;
+  }
+  .no-prize-text {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    line-height: 25px;
+    padding-top: 10px;
+  }
+}
+
+.al-content-wrap {
+  overflow: hidden;
+  text-align: center;
+  color: #333;
+  .al-content {
+    margin: 0 -10px;
+    padding-bottom: 10px;
+  }
+  .al-title {
+    font-weight: bold;
+    line-height: 30px;
+  }
+  .al-msg {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  .al-bold {
+    font-weight: bold;
+  }
+  .al-content-img {
+    height: 100px;
+    width: 100px;
+  }
+  .al-button-wrap {
+    display: flex;
+    // margin: 0 -10px -10px -10px;
+    line-height: 40px;
+    > div {
+      flex: 1;
+      &:active {
+        background: #eee;
+      }
+      &:first-child {
+        border-radius: 0 0 5px 5px;
+      }
+      &:last-child {
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+}
+.tip{
+  line-height: 35px;
+  background: #fdffd4;
+  color: #ff3300;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+
+.pr-al-content {
+  padding: 20px 0;
+  // margin: 0 -10px;
+}
+
+.qt-header, .qt-page-header {
+  background: #1ba9ba;
+}
+
+.qt-header .title, .qt-page-header .title {
+  font-size: 18px;
+}
+
+.popup-content{
+  overflow: hidden!important;
+  padding: 0 !important;
+}

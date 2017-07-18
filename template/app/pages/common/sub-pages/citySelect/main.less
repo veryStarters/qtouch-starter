@@ -1,0 +1,300 @@
+@import "../../../../common/component/tab/tab.less";
+@import "../../../../common/component/suggest/suggest.less";
+@import "../../../../common/css/border-base.less";
+
+@condition: 'true';
+@property: background;
+@value: red;
+@clas: city-wrap;
+
+#qt_page_citySelectPage {
+    .qt-page-header, .qt-sub-header, {
+        background: #f5f5f5;
+        color: #686868;
+    }
+    .city-header{
+        width: 100%;
+    }
+    .qt-input {
+        .icon {
+            top: 1px;
+            width: 25px;
+            &.search {
+                left: 8px;
+                color:#666;
+            }
+            &.cancel-circle {
+                position: absolute;
+                padding: 0;
+                height: inherit;
+                right: 8px;
+            }
+        }
+        input{
+            border-width: 0;
+            background: #e0e0e0;
+            height: 32px;
+            padding: 0 30px 0 26px;
+        }
+    }
+
+    .city-select {
+        padding: 0 28px 10px 10px;
+        top: 44px;
+        width: 100%;
+        margin-left: 25px;
+        font-size: 14px;
+
+    }
+
+
+    .city-title {
+        padding: 9px 10px;
+        color: #8f8f8f;
+        font-size: 12px;
+        background: #f2f8fb;
+    }
+
+    div.location {
+        font-size: 14px;
+        line-height: 33px;
+        background-size: 22px;
+        //border-top: 1px solid #d0d0d0;
+        padding: 5px 15px 5px 10px;
+        //border-bottom: 1px solid #cacaca;
+    }
+
+    .city-wrap {
+        padding: 0 4px 10px 4px;
+        //border-top: 1px solid #cacaca;
+        //border-bottom: 1px solid #cacaca;
+        font-size: 0;
+        .qt-border-base;
+    }
+    .city-wrap:before {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .city-grid {
+        width: 70px;
+        height: 35px;
+        font-size: 14px;
+        line-height: 35px;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        .qt-border-base(5px, 5px, 5px, 5px);
+        &:active {
+            background: #ddd;
+        }
+    }
+    .city-grid {
+        &:before {
+            border: 1px solid #ccc;
+        }
+    }
+
+    @media (min-width: 375px) and (max-width: 380px) {
+        .city-grid {
+            width: 65px;
+        }
+    }
+    @media (min-width: 380px) {
+        .city-grid {
+            width: 75px;
+        }
+    }
+    .citySelect_div {
+        height: 44px;
+        width: 100%
+    }
+    .city-package {
+        display: inline-block;
+        padding: 10px 3px 0 3px;
+        vertical-align: middle;
+    }
+    .letters-navigation {
+        font-size: 14px;
+        text-align: center;
+        .qt-border-base;
+    }
+    .letters-navigation:before {
+        border-top: 1px solid #ccc;
+    }
+    .letters-navigation > div {
+        display: flex;
+    }
+    .letters-navigation > div > div {
+        width: 25%;
+        line-height: 40px;
+        .qt-border-base;
+    }
+    .letters-navigation > div > div:before {
+        border-bottom: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+    }
+
+    .no-history {
+        width: 100%;
+        height: 35px;
+        font-size: 14px;
+        line-height: 35px;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    footer {
+        overflow: visible;
+        height: 0px;
+    }
+
+    .qt-list > li:first-child {
+        border-top: 0;
+    }
+
+    .sidebar-right-side-wrapper {
+        //position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 15;
+
+    }
+    .local-city {
+        //width: 60px;
+        display: inline-block;
+    }
+    //.qt-page-header{
+    //  position: fixed!important;
+    //}
+    .cs-fixed {
+        position: fixed !important;
+    }
+    .select-container {
+        min-height: 100%;
+    }
+
+    .city-select {
+
+    }
+
+    .sl_slide {
+        overflow: hidden;
+    }
+    .sl_content {
+        //display: flex;
+        font-size: 0;
+    }
+    .sl_part {
+        float: left;
+        //display: inline-block;
+        position: relative;
+        top: 0;
+        vertical-align: top;
+        min-height: 1px;
+    }
+    .tab-content-keywords {
+        font-size: 14px;
+    }
+    //.height1{
+    //  height: 1px;
+    //  overflow: hidden;
+    //}
+    .slipping-letters-fadeIn {
+        animation: fadeIn .5s both;
+    }
+    .content > div {
+        background: #fff;
+    }
+    .confirm {
+        position: absolute;
+        right: 5px;
+        z-index: 2;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+}
+
+.sidebar-right-side {
+    font-size: 12px;
+    line-height: 13px;
+    font-weight: 700;
+    text-align: center;
+    //padding-right: 4px;
+    width: 25px;
+    position: relative;
+    right: 0px;
+    color: #17A4BD;
+    /*background: #fff;*/
+    //padding-left: 10px;
+}
+
+.sidebar-right-side > div > span {
+    font-weight: bolder;
+    display: inline-block;
+    width: 15px;
+    text-align: center;
+}
+
+.sidebar-right-side > div:last-child {
+    padding-bottom: 20px;
+}
+
+.sidebar-touch-value {
+    //display: none;
+    position: absolute;
+    background: #17A4BD;
+    color: #fff;
+    padding: 0 10px;
+    font-weight: 700;
+    font-size: 26px;
+    right: 150px;
+    border-radius: 3px;
+    transform: translate3d(50%, -50%, 0);
+}
+
+.get-location {
+    margin-right: 20px;
+    float: right;
+    font-size: 16px;
+}
+
+.page-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 3;
+    padding-left: 4px;
+    i {
+        font-size: 36px;
+    }
+}
+
+@media (min-height: 481px) and (max-height: 568px) {
+    .sidebar-right-side {
+        line-height: 16px;
+    }
+}
+
+@media (min-height: 569px) and (max-height: 627px) {
+    .sidebar-right-side {
+        line-height: 18px;
+    }
+}
+
+@media (min-height: 628px) {
+    .sidebar-right-side {
+        line-height: 20px;
+    }
+}

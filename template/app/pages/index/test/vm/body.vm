@@ -1,0 +1,113 @@
+
+
+<div class="qt-lh6">
+    这里可以有其他内容$!commonParam.currentDateStr
+    <div class="qt-btns">
+        <span class="btn smaller qt-bg-green open-page">Page</span>
+        <span class="btn smaller qt-bg-green open-page1">Page1</span>
+        <span class="btn small alert">Alert</span>
+        <!--</div>-->
+        <!--<div class="qt-btns">-->
+        <span class="btn qt-bg-red confirm">Confirm</span>
+    </div>
+</div>
+
+<ul class="qt-list">
+    <li class="qt-arrow b">这是一个无框列表</li>
+    <li class="qt-arrow r">
+        一个loading动画<i class="qt-loading"></i>
+    </li>
+    <li>
+        <div class="qt-btns">
+            <span class="btn smaller popup qunarapi">QunarAPI</span>
+            <span class="btn smaller popup ">通用弹出框</span>
+            <span class="btn smaller top-side">顶部下滑</span>
+            <span class="btn smaller bottom-side">底部上滑</span>
+        </div>
+    </li>
+    <li>
+        <div class="qt-btns">
+            <span class="btn small disabled">Disabled</span>
+            <span class="btn smaller left-side">左侧右滑</span>
+            <span class="btn smaller right-side">右侧左滑</span>
+        </div>
+    </li>
+    <li class="get-ua qt-arrow b">获取系统浏览器信息</li>
+    <li class="qt-grid qt-center qt-white">
+        <div class="col3 qt-bg-purple">这里的内容肯能会有点多超过了限制</div>
+        <div class="col4 qt-bg-green">栅格系统</div>
+        <div class="col5 qt-bg-yellow">栅格系统</div>
+    </li>
+</ul>
+<div class="qt-pa10"></div>
+<ul class="qt-list inset qt-border-x1 r10">
+    <li>这是一个内框列表</li>
+    <li class="qt-input remove-icon">
+        <input type="text" placeholder="请输入内容"/>
+        <i class="icon remove"></i>
+    </li>
+    <li class="qt-input search-icon remove-icon">
+        <i class="icon search"></i>
+        <input type="text" placeholder="关键词、城市"/>
+        <i class="icon remove"></i>
+    </li>
+    <li class="qt-grid">
+        <div class="col8 qt-left">是否需要发票：</div>
+        <div class="col4 qt-right">
+            <div class="qt-switch active" data-on="需要" data-off="不需要">
+                <span class="switch-handle"></span>
+            </div>
+        </div>
+    </li>
+    <li class="qt-grid">
+        <div class="col8 qt-left">性别：</div>
+        <div class="col4 qt-right">
+            男<i class="icon radio checked"></i> 女<i class="icon radio"></i>
+        </div>
+    </li>
+    <li class="qt-grid">
+        <div class="col3 qt-left">爱好：</div>
+        <div class="col9 qt-right">
+            扫地<i class="icon checkbox checked"></i> 洗碗<i class="icon checkbox"></i>
+            打杂<i class="icon checkbox checked"></i>
+        </div>
+    </li>
+    <li class="qt-grid">
+        <div class="col8 qt-left">房间数：</div>
+        <div class="col4 qt-right qt-font14">
+            <i class="icon minus"></i> <span class="qt-font20 qt-blue">8</span> <i class="icon plus"></i>
+        </div>
+    </li>
+    <li class="qt-grid">
+        <div class="col8 qt-left">房间数：</div>
+        <div class="col4 qt-right qt-font14">
+            <i class="icon minus"></i> <span class="qt-font20 qt-blue">8</span> <i class="icon plus"></i>
+        </div>
+    </li>
+</ul>
+
+<div class="qt-ma10">
+    <div class="qt-tab">
+        <ul class="nav">
+            <li><span>标题A</span></li>
+            <li><span>标题B</span></li>
+            <li><span>标题C</span></li>
+        </ul>
+        <div class="line"></div>
+        <div class="content">
+            <div>内容A</div>
+            <div>内容B</div>
+            <div>内容C</div>
+        </div>
+    </div>
+</div>
+
+<div class="qt-mal0">
+    <div id="range"></div>
+</div>
+<div id="panorama"></div>
+<div id="result">
+    <button id="setPanoramaByLocation">按经纬度展示全景</button>
+    <button id="setPanoramaById">按全景Id展示全景</button>
+    <button id="setPanoramaById1">按全景Id展示全景</button>
+</div>

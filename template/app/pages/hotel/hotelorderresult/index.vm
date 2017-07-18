@@ -1,0 +1,27 @@
+##<!--标题、变量定义-->
+        #set( $g_title = '去哪儿酒店 - 酒店预订, 酒店查询 -  去哪儿网 Qunar.com' )
+
+        ##<!--样式模块定义-->
+        #define ( $style )
+        <link rel="stylesheet" href="/pages/hotel/hotelorderresult/main.css"/>
+        #end
+
+        ##<!--主内容模块定义-->
+        #define ( $body )
+        #parse('pages/hotel/hotelorderresult/vm/body.vm')
+        #end
+
+        ##<!--尾部模块定义-->
+        #define ( $footer )
+        #parse('pages/hotel/hotelorderresult/vm/footer.vm')
+        #end
+
+        ##<!--脚本模块定义-->
+        #define ( $script )
+        <script src="http://api.map.baidu.com/api?v=1.4&ak=3bTDeMOIWun9DELpjhsfeO9W"></script>
+        <!--<script src="http://q.qunarzz.com/travel_client/prd/scripts/qunarapi.js"></script>-->
+        <script src="/pages/hotel/hotelorderresult/main.js"></script>
+        #end
+
+        ##<!--渲染页面-->
+        #render($style,$header,$subHeader,$body,$footer,$script)

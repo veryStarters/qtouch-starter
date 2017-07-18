@@ -1,0 +1,33 @@
+##<!--标题、变量定义-->
+#set( $g_title = '奖品说明' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<link rel="stylesheet" href="/pages/activity/airlineticket/prizedesc/main.css"/>
+#end
+
+##<!--头部模块定义-->
+## #define ( $header )
+## #end
+
+##<!--副头部模块定义-->
+##define ( $subHeader )
+##end
+
+##<!--主内容模块定义-->
+#define ( $body )
+##parse('pages/activity/airlineticket/prizedesc/vm/body.vm')
+#end
+
+##<!--尾部模块定义-->
+#define ( $footer )
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script src="/pages/activity/airlineticket/prizedesc/main.js"></script>
+<!--<script src="http://hy.qunar.com/source/test/src/QunarAPI.js"></script>-->
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

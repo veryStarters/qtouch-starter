@@ -1,0 +1,46 @@
+#if($!msg && $!{msg}!='')
+<div>
+    <p class="load-failed"></p>
+    <div class="errmsg">$!{msg}</div>
+</div>
+#else
+<div class="oc-score">
+    <div class="commentscore qt-font14">
+        <p class='title'>给个评分吧</p>
+        <p class="userscore qt-font12 qt-hide">
+            <span class='scorenum'></span>分
+            <span class="scoredesc"></span>
+        </p>
+    </div>
+    <div class="commentstar">
+        <div class="starscore"></div>
+    </div>
+</div>
+#if($!req.r==2)
+<div class="oc-checkindate qt-bt-x1 qt-font14">
+    <span class="title">入住时间</span>
+    <span>$!req.checkInDate</span>
+</div>
+#else
+<div class="oc-checkindate qt-bt-x1 qt-font14">
+    <span class="title">请选择入住时间</span>
+    <span class="selectdate">
+        <select name="year" class="year"></select>年
+        <select name="month" class="month"></select>月
+    </span>
+</div>
+#end
+<div class="oc-triptype qt-bb-x1 qt-bt-x1 qt-font14">
+    <span class="title">入住类型</span>
+    <span class="typeselect qt-grey">
+        <span class="typename">请选择</span>
+        <span class="icon arrow-right"></span>
+    </span>
+</div>
+<div class="oc-inputcomment">
+    <textarea class="qt-grey qt-font12 commenttextarea" placeholder="入住这家酒店感觉如何？$!data.editHint"></textarea>
+    <p class="counttip qt-font12 qt-red qt-right qt-hide">
+        已输入<span class="hascount"></span>字，还可以输入<span class="recount"></span>字
+    </p>
+</div>
+#end

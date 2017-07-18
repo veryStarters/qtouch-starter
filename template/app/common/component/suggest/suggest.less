@@ -1,0 +1,33 @@
+.qt-suggest {
+  width: 100%;
+  display: none;
+  box-sizing: border-box;
+
+  .list {
+    .item {
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 40px;
+      line-height: 40px;
+      font-size: 13px;
+      &:first-child:before {
+        display: none;
+      }
+      em{
+        font-style: normal;
+      }
+    }
+  }
+  .toolbar {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    display: none;
+    .clear,
+    .close{
+      display: none;
+    }
+  }
+}

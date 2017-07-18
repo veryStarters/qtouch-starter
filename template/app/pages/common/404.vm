@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>去哪儿酒店 - 酒店预订, 酒店查询 -  去哪儿网 Qunar.com</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,shrink-to-fit=no,user-scalable=no,minimal-ui"
+          name="viewport"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="keywords" content="酒店, 酒店预订, 酒店查询, 订酒店, 宾馆预订">
+    <meta name="description" content="去哪儿网酒店预订频道提供国内外酒店预订，酒店报价查询，提供数十万家酒店、宾馆、客栈、连锁酒店、高端酒店、精品酒店的实时比价服务。">
+
+</head>
+<body>
+<div class="qt-wrapper">
+    <div class="qt-header-wrapper ">
+        <div class="qt-header fixed">
+            <h3 class="title">xxxxxx</h3>
+        </div>
+    </div>
+
+    <div class="qt-scroll-wrapper">
+        <div class="qt-content">
+            <div class="qt-body" >safasdf</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,578 @@
+/*添加常用联系人*/
+@import './sub-pages/add-user/add-user';
+@import './sub-pages/room-preference/room-preference';
+@import './sub-pages/order-room-count-select/room-count';
+@import './sub-pages/shipping-address/shipping-address';
+
+body,.qt-wrapper {background-color: #f0f3f5;}
+.sidebar-zindex {
+	z-index: 21;
+}
+
+// 攻略ios客户端顶部要留20px的空白
+.qt-header-wrapper.client, .qt-page-header-wrapper.client {
+	height: 70px;
+	.qt-header, .qt-page-header {
+		height: 70px;
+		padding-top: 20px;
+
+		.left,.right {
+			margin-top: 20px;
+		}
+		.title {
+			position: static;
+		}
+
+	}
+}
+
+// loading
+.order-loading {
+	position: fixed;
+	top: 40%;
+	width: 100%;
+	z-index: 50;
+	.qt-luotuo {
+		width: 55px;
+		margin: 0 auto;
+		color: #065D67;
+	}
+}
+
+/* header部分 */
+.qt-header,.qt-page-header {
+	background-color: #fff;
+	color: #222;
+	nav:before {
+		color: #25a4bb;
+	}
+	.header-title {
+		width: 100%;
+		img {
+			margin-top: 3px;
+		}
+	}
+    nav.login{
+        width: 50px;
+    }
+}
+
+.popup-content {
+	font-size: 12px;
+	line-height: 1.5em;
+}
+
+/* 错误信息 */
+.err-box {
+	padding: 10px 15px;
+	background-color: #FEFFE5;
+	font-size: 10px;
+	p {
+		&:before {
+			color: #ff4500;
+			margin-right: 10px;
+		}
+
+		span {
+			font-family: arial,sans-serif;
+		}
+	}
+}
+
+/* 订单基本信息部分 */
+.base-info {
+	padding: 13px 13px 0 13px;
+	p {
+		&.room-type {
+			margin-bottom: 6px;
+			line-height: 1.4em;
+			word-wrap: break-word;
+		}
+		.breakfast.qt-arrow:after {
+			width: 8px;
+			height: 8px;
+			margin-top: -5px;
+			right: -9px;
+		}
+		&.time-range>span {
+			margin-right: 14px;
+		}
+		&.other>span {
+			margin-right: 12px;
+		}
+	}
+}
+
+/* 订单填写部分 */
+.order-option {
+	li {
+		padding-left: 12px;
+		margin-top: 10px;
+		.loading {
+			padding: 20px 0;
+			text-align: center;
+		}
+		>div {
+			height: 44px;
+			line-height: 1em;
+			.label {
+				display: inline-block;
+				padding: 14px 0;
+				font-size: 14px;
+				min-width: 84px;
+				color: #8c8c8c;
+			}
+			.val {
+				display: inline-block;
+				padding: 13px 0;
+				font-size: 16px;
+				//color: #8c8c8c;
+				vertical-align: middle;
+			}
+			.input {
+				display: inline-block;
+				width: 200px;
+				margin-bottom: 5px;
+				input {
+					padding-left: 0;
+				}
+			}
+			.room-account {
+				display: inline;
+				height: 44px;
+				vertical-align: middle;
+				font-family: "Arial";
+				font-size: 0;
+				.minus,.plus{
+					display: inline-block;
+					width: 28px;
+					height: 28px;
+					font-size: 22px;
+					line-height: 28px;
+					vertical-align: middle;
+					text-align: center;
+					border-color: #aaa;
+					&.off {
+						background-color: #e7e7e7;
+					}
+				}
+				.minus {
+					vertical-align: middle;
+					background: url("/common/images/2x/minus.png") no-repeat;
+					background-size: 100% 100%;
+					background-position: 0 0;
+				}
+				span {
+					display: inline-block;
+					width: 34px;
+					height: 28px;
+					padding: 7px 0;
+					background: url("/common/images/2x/room-count-border.png") no-repeat;
+					background-position: 50% 0;
+					background-size: 100% 100%;
+					border-radius: 0;
+					line-height: 1em;
+					vertical-align: middle;
+					text-align: center;
+					font-size: 14px;
+				}
+				.plus {
+					background: url("/common/images/2x/plus.png") no-repeat;
+					background-size: 100% 100%;
+					background-position: 100% 0;
+				}
+				.lt {
+					border-radius: 3px 0 0 3px;
+				}
+				.rt {
+					border-radius: 0 3px 3px 0;
+				}
+			}
+			.guarantee {
+				margin-left: 15px;
+				font-size: 12px;
+			}
+			.line-tip {
+				line-height: 1.3;
+				padding-bottom: 8px;
+				padding-right: 10px;
+			}
+			.line-tip-2 {
+				background-color: #f5f5f5;
+				line-height: 1.3em;
+				margin: -5px 10px 5px 0;
+				border-radius: 5px;
+				padding: 3px 8px;
+				font-size: 12px;
+			}
+			&.room-line.gj-room {
+				height: auto;
+				padding-bottom: 1px;
+				.val {
+					margin-left: 15px;
+				}
+			}
+			&.invoice, &.coupons {
+				&.on {
+					height: auto;
+				}
+				.qt-switch {
+					position: absolute;
+					right: 12px;
+					top: 8px;
+				}
+			}
+			&.guests-line {
+				height: auto;
+				p {
+					height: 44px;
+				}
+				&.gj {
+					input {
+						display: inline-block;
+						padding-left: 2px;
+						font-size: 14px;
+					}
+					.guests-a {
+						width: 80px;
+						border-right: 1px solid #ccc;
+						border-radius: 0;
+					}
+					.guests-b {
+						 width: 100px;
+					}
+					.split {
+						display: inline-block;
+						height: 34px;
+						vertical-align: middle;
+					}
+				}
+			}
+			&.invoice-detail {
+				height: auto;
+				p {
+					height: 44px;
+				}
+
+				.address_content{
+					display: flex;
+					align-items: center;
+					min-height: 44px;
+					height: auto;
+					line-height: normal;
+
+					.address-content{
+						margin-right: 30px;
+						padding: 5px 0 5px 5px;
+						width: 250px;
+						>p{
+							font-size: 14px;
+							margin: 5px 0;
+							word-wrap: break-word;
+							word-break: break-all;
+							height: auto;
+							padding: 0;
+						}
+					}
+				}
+			}
+			&.accommodation-line{
+				display: flex;
+				align-items: center;
+				min-height: 44px;
+				height: auto;
+				line-height: normal;
+
+				.accommodation-content{
+					margin-right: 30px;
+					padding: 5px 0 5px 5px;
+					>p{
+						font-size: 14px;
+						margin: 5px 0;
+						word-wrap: break-word;
+						word-break: break-all;
+					}
+				}
+			}
+		}
+
+		.guests-line .add{
+			position: absolute;
+			right: 10px;
+			width: 26px;
+			height: 26px;
+			margin-top: 13px;
+			font-size: 26px;
+		}
+
+		.qt-arrow.r:after {
+			right: 12px;
+		}
+	}
+
+	.personal-needs {
+		.val, .input {
+			font-size: 14px;
+		}
+	}
+}
+
+/* 提示部分 */
+.tip-box {
+	padding: 8px 28px 10px 12px;
+	p {
+		line-height: 30px;
+		font-size: 14px;
+		img {
+			margin-left: 5px;
+			vertical-align: middle;
+			height: 14px;
+		}
+	}
+	.tips {
+		li {
+			margin-bottom: 6px;
+			span {
+				line-height: 16px;
+			}
+			&.ellipsis {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+			}
+		}
+	}
+	.more-tips {
+		margin-top: 5px;
+	}
+}
+
+/* 提交box样式 */
+.submit-box {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+	padding-left: 12px;
+	&.fixed {
+		position: fixed;
+		bottom: 0;
+		z-index: 21;
+	}
+	.content {
+		flex: 1;
+		vertical-align: middle;
+		.main-content {
+
+			span {
+
+			}
+		}
+		.sub-content {
+
+		}
+	}
+	.detail-btn {
+		margin-right: 5px;
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		span {
+			display: inline-block;
+			margin-right: 9px;
+			font-size: 12px;
+			line-height: 1em;
+			padding: 18px 8px 18px 0;
+			vertical-align: middle;
+		}
+		&:after {
+			width: 7px;
+			height: 7px;
+		}
+		&.t:after {
+			margin-top: -2px;
+		}
+		&.b:after {
+			margin-top: -6px;
+		}
+		&.qt-arrow:after {
+			transition: all .5s linear;
+		}
+	}
+	.submit-btn {
+		display: inline-block;
+		width: 112px;
+		height: 50px;
+		background-color: #ff4500;
+		vertical-align: middle;
+		text-align: center;
+		font-size: 18px;
+		line-height: 1em;
+		padding: 16px 0;
+	}
+}
+
+/* 单项选择 */
+.radio-box {
+	h2 {
+		margin: 0;
+		padding-left: 15px;
+		line-height: 46px;
+	}
+	.price {
+		font-family: "arial";
+	}
+	.sub-title {
+		padding: 0 10px 10px 15px;
+		line-height: 1.5;
+	}
+	ul {
+		max-height: 100%;
+		margin-top: 1px;
+		&.limit-height {
+			max-height: 200px;
+			overflow: scroll;
+		}
+		&.child-age {
+			max-height: 200px;
+			overflow: scroll;
+		}
+		li {
+			display: flex;
+			line-height: 38px;
+			.icon {
+				visibility: hidden;
+			}
+			&.active {
+				color: #25a4bb;
+				.icon {
+					color: #25a4bb;
+					visibility: visible;
+				}
+			}
+			i {
+				display: inline-block;
+				width: 44px;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+			p {
+				flex: 1;
+			}
+		}
+	}
+}
+
+/* 入住人填写说明弹框 */
+.user-tips-content {
+	list-style: none;
+	counter-reset: a;
+	li {
+		counter-increment: a 1;
+		&:before {
+			content: counter(a)"、";
+		}
+		margin-bottom: 3px;
+		line-height: 1.5em;
+	}
+}
+
+/* 价格明细 */
+.price-detail {
+	margin: 18px 32px 15px 32px;
+	li {
+		padding-bottom: 15px;
+		.title {
+			font-size: 16px;
+			line-height: 2.3em;
+			.price {
+				float: right;
+				color: #f60;
+			}
+		}
+		.tips {
+			font-size: 12px;
+			line-height: 1.9em;
+			color: #8c8c8c;
+			clear: both;
+			.left {
+				float: left;
+				margin-right: 10px;
+			}
+			.right {
+				float: right;
+				margin-left: 10px;
+			}
+			.center {
+				display: block;
+				border-bottom: 1px dashed #ccc;
+				height: 16px;
+				margin: 0 10px;
+				overflow: hidden;
+			}
+		}
+	}
+}
+
+/* 早餐明细弹框 */
+.breakfast-detail-content {
+	max-height: 200px;
+	overflow: scroll;
+	li {
+		overflow: hidden;
+		font-size: 12px;
+		line-height: 22px;
+		.left {
+			float: left;
+			margin-right: 10px;
+		}
+		.right {
+			float: right;
+			margin-left: 10px;
+		}
+		.center {
+			display: block;
+			border-bottom: 1px dashed #ccc;
+			height: 12px;
+			margin: 0 10px;
+			overflow: hidden;
+		}
+	}
+}
+
+/* 更多提示弹框 */
+.tips-pop {
+	padding: 0 3px 10px;
+	li {
+		margin-bottom: 5px;
+	}
+}
+
+/* 页面初始错误提示 */
+.tips {
+	.load-failed {
+		display: block;
+		width: 100px;
+		height: 60px;
+		margin: 20px auto;
+		background-image: url("http://simg1.qunarzz.com/site/images/wap/hlist/failed-bg.png");
+		background-size: 100% 100%;
+	}
+	.info {
+		padding: 0 10%;
+	}
+}
+
+/* 页面顶部提示消息 */
+.top-tips {
+	margin: 10px 20px;
+	p {
+		line-height: 1.5em;
+	}
+}
+
+

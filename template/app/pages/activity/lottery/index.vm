@@ -1,0 +1,40 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿狂撒千万份好礼，摇一摇，红包现金送不停！' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<link rel="stylesheet" href="/pages/activity/lottery/main.css"/>
+#end
+
+##<!--头部模块定义-->
+##define ( $header )
+##end
+
+##<!--副头部模块定义-->
+##define ( $subHeader )
+##end
+
+##<!--主内容模块定义-->
+##define ( $body )
+##parse('pages/activity/lottery/vm/body.vm')
+##end
+
+##<!--尾部模块定义-->
+#define ( $footer )
+<audio id="myAudio" src="/common/images/5018.mp3" loop="false" hidden="true"  preload="load"></audio>
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script type="text/javascript">
+    document.write(decodeURIComponent("%3Cscript src='//common.qunarzz.com/ucapi/prd/scripts/index.js%3Fver=1.0.2%26_t=" + Date.now() + "' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!--<script src="http://hy.qunar.com/source/test/src/QunarAPI.js"></script>-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0"></script>
+<script src="http://m.qunar.com/zhuanti/yaoyiyao_config_new.js"></script>
+<script src="/pages/activity/lottery/main.js"></script>
+
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

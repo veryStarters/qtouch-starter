@@ -1,0 +1,133 @@
+/* Lists
+-------------------------------------------------- */
+
+ul.qt-list {
+  list-style: none;
+  background: #fff;
+  position: relative;
+  > li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    &:before {
+      content: "";
+      position: absolute;
+      //z-index: -1;
+      font-size: 0;
+      line-height: 0;
+      top: -1px;
+      left: 0;
+      height: 0;
+      background: none;
+      transform-origin: 0 0;
+      border-bottom: 1px solid #ccc;  
+        pointer-events: none;
+
+    }
+    &:first-child:before {
+      top: 0px;
+    }
+    &:last-child:before {
+      top: 0px;
+    }
+    &:active {
+      background-color: #f8f8f8;
+    }
+    &:last-child{
+      border-bottom: 1px solid #ddd;
+    }
+
+  }
+  &.no-last-child-border{
+    >li{
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+  &.qt-blue {
+    > li {
+      &:before {
+        border-bottom: 1px solid #25a4bb;
+      }
+      &:first-child {
+        &:before {
+          border-bottom: 1px solid #25a4bb;
+        }
+      }
+    }
+    /* 列表底部边框 */
+    &::after {
+      border-bottom: 1px solid #25a4bb;
+    }
+
+  }
+  &.interlaced {
+    > li {
+      &:nth-child(odd) {
+        background-color: #fafafa;
+      }
+      &:nth-child(even) {
+        background-color: #fff;
+      }
+    }
+  }
+
+  /* Inset list-------------------------------------------------- */
+  &.inset {
+    width: auto;
+    margin: 0 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    > li {
+      &:first-child:before {
+        border-bottom: none;
+      }
+    }
+  }
+
+  /* 列表底部边框 */
+  &::after {
+    content: "";
+    position: absolute;
+    font-size: 0;
+    line-height: 0;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    background: none;
+    transform-origin: 0 0;
+    //border-bottom: 1px solid #ccc;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  ul.qt-list.inset > li:before,
+  ul.qt-list > li:before,
+  ul.qt-list::after {
+    width: 150%;
+    //height: 150%;
+    transform: scale(2/3);
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  ul.qt-list.inset > li:before,
+  ul.qt-list > li:before,
+  ul.qt-list::after {
+    width: 200%;
+    //height: 200%;
+    transform: scale(0.5);
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  ul.qt-list.inset > li:before,
+  ul.qt-list > li:before,
+  ul.qt-list::after {
+    width: 300%;
+    //height: 300%;
+    transform: scale(1/3);
+  }
+}

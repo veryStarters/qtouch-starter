@@ -1,0 +1,32 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿网新年钜惠，邀好友抢"机票免单”大奖' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<link rel="stylesheet" href="/pages/index/test/main.css"/>
+#end
+
+##<!--头部模块定义-->
+#define ( $header )
+#end
+
+##<!--副头部模块定义-->
+#define ( $subHeader )
+#end
+
+##<!--主内容模块定义-->
+#define ( $body )
+#parse('pages/index/test/vm/body.vm')
+#end
+
+##<!--尾部模块定义-->
+#define ( $footer )
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script src="/pages/index/test/main.js"></script>
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

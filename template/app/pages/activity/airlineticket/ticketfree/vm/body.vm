@@ -1,0 +1,116 @@
+<div class="main">
+    <div class="close mian-close qt-hide"></div>
+    <div class="content-wrap">
+        <div class="img-wrap">
+            <img class="turntable"
+                 src="http://source.qunar.com/site/images/wap/touch/images/v2/images1x/23f51118af6f15bdea580bbb847636d1.jpg">
+            
+            <img class="qt-hide"
+                 src="http://source.qunar.com/site/images/wap/touch/images/v2/images1x/start-lot-act.png">
+
+            <img class="my-prize-start" src="http://source.qunar.com/site/images/wap/touch/images/v2/images1x/my-prize.png">
+
+            <!--开始抽奖-->
+            <img class="start-button"
+                 src="http://source.qunar.com/site/images/wap/touch/images/v2/images1x/start-lot.png">
+            <div class="roate-arrow-wrap">
+                <img class="roate-arrow"
+                     src="http://source.qunar.com/site/images/wap/touch/images/v2/images1x/0e996bdfb75bfb1369b0a0800839f12f.png">
+            </div>
+
+            <!--抽奖结束-->
+            <img class="end-button qt-hide"
+                 src="http://img1.qunarzz.com/m_appPromotion/wap/1601/ec/1211cab2e3195df7.png">
+
+            <div class="prize-desc"></div>
+            <div class="prize-baodian"></div>
+
+            <div class="highlights spot1"></div>
+            <div class="highlights spot2 qt-hide"></div>
+            <div class="highlights spot3"></div>
+            <div class="highlights spot4 qt-hide"></div>
+            <div class="highlights spot5"></div>
+            <div class="highlights spot6 qt-hide"></div>
+            <div class="highlights spot7"></div>
+            <div class="highlights spot8 qt-hide"></div>
+            <div class="highlights spot9"></div>
+            <div class="highlights spot-hide qt-hide"></div>
+            <div class="highlights spot10"></div>
+            <div class="highlights spot11 qt-hide"></div>
+            <div class="highlights spot12"></div>
+            <div class="highlights spot13 qt-hide"></div>
+            <div class="highlights spot14"></div>
+            <div class="highlights spot-hide qt-hide"></div>
+            <div class="highlights spot15"></div>
+            <div class="highlights spot16 qt-hide"></div>
+            <div class="highlights spot17"></div>
+            <div class="highlights spot18 qt-hide"></div>
+            <div class="highlights spot19"></div>
+            <div class="highlights spot20 qt-hide"></div>
+            <div class="highlights spot21"></div>
+            <div class="highlights spot22 qt-hide"></div>
+
+        </div>
+        <div class="bottom-wrap">
+            <div class="my-prize qt-hide">
+                <div>查看我的奖品</div>
+            </div>
+            <div class="rewards-wrap">
+                <div class="rewards billboard">
+
+                </div>
+            </div>
+            <div class="rule-title">
+                活动规则
+            </div>
+            <div class="rule-wrap">
+
+                <div class="rule">
+                    <div class="ru-title">活动有效期至:$!data.activity_expiry_time</div>
+                    <div class="ru-title">奖励内容：</div>
+                    <div class="ru-text">
+                        1、如果您成功邀请一位去哪儿新用户并激活会员红包（具体条件请参考规则2），可得一次抽奖机会。
+                        <br/>
+                        2、分享去哪儿红包给好友，好友可领300元会员红包。
+                    </div>
+                    <div class="ru-title">如何获得抽奖机会：</div>
+                    <div class="ru-text">
+                        您的好友需满足以下条件：
+                        <br/>
+                        1、领取会员红包手机号为未注册过去哪儿账号的手机号。
+                        <br/>
+                        2、通过关联一张新的银行卡激活会员红包。
+                    </div>
+                    <div class="ru-title">如何查看奖励：</div>
+                    <div class="ru-text">
+                        您可以登录去哪儿APP在“我的-机票免单-我的奖品”界面查看您已获得的奖励。
+                    </div>
+                    <div class="ru-title">活动声明：</div>
+                    <div class="ru-text">
+                        若发现参与活动用户存在不正当方式（如批量注册、恶意购买、虚假交易等），去哪儿网将自动取消您本次活动资格并有权冻结账号、扣除已获奖励、取消您后续参加去哪儿网任意活动的权利，必要时追究法律责任。若您参与活动，视为同意以上活动规则。
+                        <br/>
+                        <span class="ios-rule">该活动苹果不是赞助商，并且苹果也不会以任何形式参与。</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--底部微信-->
+        <div class="fixed-wrap">
+            <div class="top-part">
+                <div>您还剩<span class="yellow lottery-num">0</span>次抽奖</div>
+            </div>
+            <div class="bottom-part">
+                <div class="weixin">
+                    <div>
+                        邀微信好友
+                    </div>
+                </div>
+                <div class="address-book">
+                    <div>
+                        邀通讯录好友
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

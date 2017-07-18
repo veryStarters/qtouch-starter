@@ -1,0 +1,15 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿酒店 - 酒店预订, 酒店查询 -  去哪儿网 Qunar.com' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<link rel="stylesheet" href="/pages/hotel/recent/main.css"/>
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script src="/pages/hotel/recent/main.js"></script>
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

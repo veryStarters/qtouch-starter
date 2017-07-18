@@ -1,0 +1,7 @@
+<nav class="icon left previous"></nav>
+<h1 class="title">
+	$!req.hotelName
+</h1>
+#if(!$!msg || $!{msg}=='')
+<span class="submit">发布</span>
+#end

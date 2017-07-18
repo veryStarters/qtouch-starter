@@ -1,0 +1,81 @@
+##<!--标题、变量定义-->
+#set( $g_title = '订单状态' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<style>
+    ul{margin-top:20px; }
+    li{padding-left: 56px;position: relative;font-size: 16px;margin-bottom: 56px;color: #9e9e9e}
+    li:before{
+        content: '';
+        width: 1px;
+        height: 75px;
+        position: absolute;
+        top: 10px;
+        left: 61px;
+        background: #e0e0e0;
+    }
+    li:last-child:before{
+        width: 0;
+        height: 0;
+    }
+    li i{
+        position: absolute;
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        background: #e0e0e0;
+        border-radius: 50%;
+        top:3px
+    }
+    li p{
+        margin-left: 38px;
+    }
+    li.active i{
+        background: #00AFC7;
+    }
+    li.active p{
+        color: #00afc7;
+    }
+    li.done p{ color: #333333}
+    li.done i{background: #00AFC7}
+
+    li.active:before{
+        background: -webkit-linear-gradient(top,#00AFC7,#e0e0e0);;
+    }
+    li.done:before{
+        background: #00AFC7;
+    }
+
+</style>
+#end
+
+
+##<!--主内容模块定义-->
+#define ( $body )
+    #if(!$ret || !$!data || !$!data.statusDetails || $!data.statusDetails.size() <= 0)
+        <p class="qt-center qt-mt10">订单状态数据异常，请稍后重试！</p>
+    #else
+        <ul>
+        #foreach($status in $!data.statusDetails)
+            #if($data.currentStatus > $velocityCount)
+                #set($className = "done")
+            #elseif($data.currentStatus == $velocityCount)
+                #set($className = "active")
+            #else
+                #set($className = "")
+            #end
+            <li class="$className">
+                <i></i>
+                <p>$status.orderStages</p>
+            </li>
+        #end
+        </ul>
+
+    #end
+
+#end
+
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

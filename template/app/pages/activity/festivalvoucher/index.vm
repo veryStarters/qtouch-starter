@@ -1,0 +1,27 @@
+##<!--标题、变量定义-->
+#set( $g_title = '七夕之期，浪漫相约-去哪儿网' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<link rel="stylesheet" href="/pages/activity/festivalvoucher/main.css"/>
+#end
+
+##<!--主内容模块定义-->
+#define ( $body )
+#parse('pages/activity/festivalvoucher/vm/body.vm')
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script>
+(function (doc, win) {
+    var docEl = doc.documentElement;
+    docEl.style.fontSize = docEl.clientWidth / 7.5 + 'px';
+})(document, window);
+</script>
+<script src="https://rmcsdf.qunar.com/js/df.js?org_id=touch.logincode&js_type=0"></script>
+<script src="/pages/activity/festivalvoucher/main.js"></script>
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

@@ -1,0 +1,139 @@
+/*头部*/
+#qt_page_roompreference{
+  background-color: #f0f3f5;
+}
+.qt-page-header-wrapper{
+  .qt-page-header{
+    .cancel-choosed{
+      font-size: 14px;
+      color:  #00a9bd;
+      width: 50px;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .approve-choosed{
+      font-size: 14px;
+      color:  #00a9bd;
+      width: 50px;
+      height: 100%;
+      z-index: 2;
+    }
+  }
+}
+
+#room-preference-wrapper{
+  .tips-container{
+    background: #fff;
+    .tips-content{
+      margin-left: 10px;
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+
+  .preference-title-wrapper{
+    min-height: 10px;
+    background: #f0f3f5;
+
+    .title-content{
+      padding: 10px 0 5px;
+      margin-left: 10px;
+      color: #333;
+    }
+  }
+
+  .preference-content-wrapper{
+    background: #fff;
+    .preference-list{
+      li{
+        height: 40px;
+        line-height: 40px;
+        display: flex;
+
+        .choose-wrapper{
+          height: 100%;
+          width: 40px;
+          flex: 0 0 40px;
+          vertical-align: middle;
+          text-align: center;
+
+          .icon{
+            color: #17A4BD;
+          }
+        }
+
+        .choose-content{
+          flex: auto;
+          padding-left: 10px;
+          font-size: 16px;
+        }
+        .qt-color-header{
+          color: #17A4BD;
+        }
+      }
+    }
+
+    .preference-list-inline{
+      display: flex;
+      align-items: center;
+      height: 40px;
+      line-height: 40px;
+
+      li{
+        margin: 0 0 0 10px ;
+        font-size: 14px;
+
+        .choose-content{
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          padding: 5px 10px;
+        }
+
+        .choosed{
+          border: 1px solid #17A4BD;
+          color:#17A4BD;
+        }
+      }
+    }
+
+    .other-preference-header{
+      height: 40px;
+      line-height: 40px;
+      position: relative;
+      padding: 0 10px;
+
+      .qt-switch{
+        position: absolute;
+        top: 6px;
+        right: 10px;
+      }
+    }
+
+    .other-wrapper{
+      padding-bottom: 10px;
+      display: none;
+    }
+    .other-textarea-wrapper{
+      padding: 0 5px;
+      height: 120px;
+      border: solid 1px #ddd;
+      margin: 0 10px;
+      position: relative;
+      // display: none;
+
+      .other-textarea{
+        height: 90px;
+        padding: 5px 0;
+      }
+
+      .input-tips{
+        color: #888;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+
+  }
+}

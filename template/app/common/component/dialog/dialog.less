@@ -1,0 +1,99 @@
+.qt-dialog {
+	display: none;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	background-color: #fff;
+	width: 80%;
+	-webkit-box-shadow: 12px 12px 7px -3px rgba(142,142,142,1);
+	-moz-box-shadow: 12px 12px 7px -3px rgba(142,142,142,1);
+	box-shadow: 12px 12px 7px -3px rgba(142,142,142,1);
+	color: #4A4A4A;
+
+	.qt-dialog-header {
+		padding: 12px 8px;
+		border-bottom: 1px solid #eee;
+		position: relative;
+
+		.qt-dialog-close {
+			position: absolute;
+			width: 25px;
+			height: 25px;
+			top: 8px;
+			right: 8px;
+			border-radius: 3px;
+
+			.close-icon() {
+				display: inline-block;
+				background-color: rgb(230, 84, 84);
+				width: 15px;
+				height: 2px;
+				content:'';
+				position: absolute;
+				left: 5px;
+				top: 12px;
+			}
+
+			&::before {
+				.close-icon();
+				-webkit-transform: rotate(135deg);
+			}
+
+			&::after {
+				.close-icon();
+				-webkit-transform: rotate(45deg);
+			}
+		}
+
+		.qt-dialog-title {
+
+		}
+
+	}
+
+	.qt-dialog-content {
+		min-height: 30px;
+		padding: 10px;
+	}
+
+	.qt-dialog-footer {
+
+		border-top: 1px solid #eee;
+		white-space: nowrap;
+		.qt-dialog-btn {
+			line-height: 40px;
+			width: 80px;
+			display: inline-block;
+			text-align: center;
+
+			&.ok {
+				width: 50%;
+				border-right: 1px solid #eee;
+			}
+
+			&.cancel {
+				width: 49%;
+			}
+		}
+
+	}
+
+	&.show {
+		display: block;
+	}
+}
+
+.qt-dialog-mask {
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #000;
+	opacity: 0.3;
+	display: none;
+
+	&.show {
+		display: block;
+	}
+}

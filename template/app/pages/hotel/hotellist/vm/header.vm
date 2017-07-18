@@ -1,0 +1,13 @@
+#if($!commonParam.skin.header)
+<nav class="icon previous left"></nav>
+#end
+#if($!data.recTitle)
+<div class="title">$!data.recTitle</div>
+<span id="toggleMap" class="header-right icon map qt-white qt-font20"></span>
+#else
+<div class="title city-change" data-city="$!req.city"><span class="city-search">#if($!req.location && $req.location!="") $!data.address #elseif($!req.city) $!req.city #else 请选择城市 #end</span><span class="icon arrow-down-4"></span></div>
+<!--<a href="/" class="header-right icon home qt-white qt-font20"></a>-->
+
+<a class="#if($!req.location && $!req.location !='' && $!req.localSearch && $!req.localSearch == 1) qt-hide #end header-right nearby-hotel">附近酒店</a>
+
+#end

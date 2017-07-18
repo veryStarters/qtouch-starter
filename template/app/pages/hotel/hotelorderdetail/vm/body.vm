@@ -1,0 +1,451 @@
+#if(!$!data.order|| $!data.order== ''||!$!ret)
+<div>
+    <p class="load-failed"></p>
+    <p class="errmsg">没有查询到订单详情</p>
+</div>
+#else
+    #set($orderInfo=$!data.order.orderInfo)
+    #if($orderInfo.confirmInfo && $orderInfo.confirmInfo !="" && $!req.type ==2)
+         <div class="od-tip">$!{order.orderInfo.confirmInfo}</div>
+    #else
+        <div class="od-tip qt-hide"></div>
+    #end
+
+    ##签到返现提醒
+    #if($orderInfo.token && $orderInfo.token!="")
+    <div class="od-cashbacktip">
+        <span class="qt-font12 qt-middle">请前往客户端进行【签到】操作领取签到返现优惠</span>
+        <span class="qt-font12 icon arrow-right cancelcashbacktip"></span>
+    </div>
+    #end
+
+    ##订单状态，区分booking订单和非booking订单
+    <div class="qt-bb-x1 qt-bt-x1 od-block od-orderstatus">
+        <p class="clearfix">
+            <span class="qt-fl qt-font20 qt-bold">$orderInfo.orderStatus</span>
+            ##if($!data.order&&$!data.order.orderAmendingLogs&&$!data.order.orderAmendingLogs.size()>0)
+            ##<span class="qt-fr changehistory">
+            ##    <span class="qt-h2half qt-middle">变更历史</span>
+            ##    <span class="icon arrow-right"></span>
+            ##</span>
+            ##end
+        </p>
+        #if($orderInfo.mPushCheckInTips&&$orderInfo.mPushCheckInTips!='')
+        <p class="qt-font12">$orderInfo.mPushCheckInTips</p>
+        #elseif($orderInfo.orderWarmTips&&$orderInfo.orderWarmTips!='')
+        <p class="qt-font12">$orderInfo.orderWarmTips</p>
+        #end
+        ##是否为booking订单字段
+        #if(!$!data.isBookingWrapper)
+            #if($!data.order.ifAdditionalPay)<p class="qt-font12">(超时未支付，系统将自动取消订单)</p>#end
+        #end   
+    </div>
+
+    ##支付和费用明细
+    <div class="od-block od-orderpaystatus">
+        <div class="clearfix">    
+            <div class="qt-fl qt-font16">              
+                #if($data.order&&$data.order.ifAdditionalPay)                   
+                <p>                       
+                    <span class="qt-bold">#if($!data.order.guara)已担保#else已支付#end</span>
+                    <span class="qt-orange qt-bold qt-ml5">¥$!{data.order.hasPayAmount}</span>
+                </p>
+                <p>
+                    <span class="qt-bold">待追加</span>
+                    <span class="qt-orange qt-bold qt-bold qt-ml5">¥$!{data.order.currentPayAmount}</span>
+                </p>
+                #else
+                <p>
+                    <span class="qt-bold">$orderInfo.payType</span>
+                    <span class="qt-orange qt-bold qt-bold qt-ml5">$!{data.order.orderInfo.currencySign}$orderInfo.totalPrice</span>
+                </p> 
+                #if($!data.order.extra.showVouch && $orderInfo.vouchInfo && $orderInfo.vouchInfo.vouchMoney && $orderInfo.vouchInfo.vouchMoney!="" && $orderInfo.vouchInfo.vouchMoney!= "0" && $orderInfo.onlineType != 2)
+                    #if(!$!data.isBookingWrapper)
+                    <span class="qt-bold">担保金额</span>
+                    <span class="qt-orange qt-bold qt-bold qt-ml5">$!{data.order.orderInfo.currencySign}$orderInfo.vouchInfo.vouchMoney</span>
+                    #if($orderInfo.vouchInfo.vouchRule && $orderInfo.vouchInfo.vouchRule != "")
+                    <span class="qt-font12 vouchrule">
+                        <span>担保规则</span>
+                        <span class="icon arrow-right qt-font12"></span>
+                    </span>
+                    #end
+                    #end
+                #end
+                #end             
+            </div>
+            <div class="qt-fr qt-blue qt-h2half showFeeDetail">
+                <span class="qt-middle">费用明细</span>
+                <span class="icon arrow-right"></span>
+            </div>
+        </div>
+        
+        #if($!data.order.cancelRule&&$!data.order.cancelRule!="")
+            #set($hascancel=true)
+        #else
+            #set($hascancel=false)
+        #end
+        #if($orderInfo.ptTypeDesc && $orderInfo.ptTypeDesc != "")
+            #set($hasextra=true)
+        #else
+            #set($hasextra=false)
+        #end
+
+        #if($hascancel||$hasextra)
+        <p class="canceltip qt-grey" data-extra=$hasextra data-cancel=$hascancel>
+            #if($hascancel)
+            #if($!data.order.cancelRule.cancelType=='CANCEL_TIME_LIMIT')
+            <span class="icon q-browse-history qt-red"></span>
+            #else
+            <span class="icon notification qt-red"></span>
+            #end
+            <span class="qt-middle">$!data.order.cancelRule.cancelName</span>      
+            #end
+            
+            #if($hasextra)
+            <span class="icon notification qt-blue"></span>
+            <span class="qt-middle">$orderInfo.ptTypeDesc</span>
+            #end
+            <span class="icon arrow-right"></span>
+        </p> 
+        #end       
+        ##签到返现/支付担保/取消订单/退款
+        #if($orderInfo.token||$!data.order.payAction||$!data.order.ifCancel||$!order.ifRefund) 
+        <div class="qt-bt-x1 qt-pt10">
+            #if($orderInfo.token&&$orderInfo.token!="")
+            <span class="signup questionbtn qt-white qt-bg-yellow noborder" data-orderno=$orderInfo.orderNo
+            data-mobile=$orderInfo.smobile>
+                签到申请返现
+            </span>
+            #end
+            ##担保/支付/追加担保、支付
+            #if($!data.order.payAction&&$!data.order.payAction!="")
+                #foreach($item in $!data.order.payAction.entrySet())
+                    <a class="questionbtn qt-white qt-bg-yellow noborder" href=$!item.value>$!item.key</a>
+                #end
+            #end
+            #if($!data.order.ifCancel)
+            <span class="cancelorder questionbtn" data-orderno=$orderInfo.orderNo
+            data-mobile=$orderInfo.smobile>取消订单</span>
+            #end
+            #if($!data.order.ifRefund)
+            <span data-totalprice=$orderInfo.totalPrice data-orderno=$orderInfo.orderNo
+            data-mobile=$orderInfo.smobile class="refundorder questionbtn">
+                申请退款
+            </span>
+            #end
+            ##if($!data.order.extendStayInfo&&$!data.order.extendStayInfo.canExtendStay)
+            ##<span class="questionbtn extendday">延住1天</span>
+            ##end
+        </div> 
+        #end
+        
+        #if($!data.order.cashBackTip||$!data.order.userBalanceTip)
+        <div class="qt-pt10 qt-pb10">
+            ##去客户端领取返现
+            #if($!data.order.cashBackTip&&$!data.order.cashBackTip!="")
+            #set($bdSource=$!commonParam.cookieBdSource)
+            <a class="questionbtn qt-white qt-bg-yellow noborder" href="http://touch.qunar.com/h5/client?bd_source=$bdSource&sScheme=1&scheme=$!data.order.clientScheme&touchUrl=download%3Fbd_source%3D$bdSource">
+                $!data.order.cashBackTip
+            </a>
+            #end
+                
+            ##查看账户余额
+            #if($!data.order.userBalanceTip&&$!data.order.userBalanceTip!="")
+            <span class="questionbtn qt-white qt-bg-yellow noborder">
+                <a class="qt-white" href="$!commonParam.host.touch/h5/user/showuseraccount">
+                    $!data.order.userBalanceTip
+                </a>
+            </span>
+            #end
+        </div>
+        #end
+    </div>
+
+    ##解决入住问题
+    ##if($!data.order.actions&&$!data.order.actions.size()>0)
+    ##<div class="od-block qt-mt10 od-questions">
+        ##<p class="qt-grey qt-pt10 qt-pb10">快速解决入住问题</p>
+            ##foreach($actionItem in $!data.order.actions)
+            ##<a class="qt-black questionbtn" href=$!actionItem.url>$!actionItem.topic</a>
+            ##end
+    ##</div>
+    ##elseif($!data.order.onlineServiceUrl&&$!data.order.onlineServiceUrl!='')
+    ##<div class="od-block qt-mt10 od-questions">
+        ##<p class="qt-grey qt-pt10 qt-pb10">快速解决入住问题</p>
+        ##<a class="qt-black questionbtn" href=$!data.order.onlineServiceUrl>在线服务</a>
+    ##</div>
+    ##end
+
+    ##房间信息
+    <div class="od-block qt-mt10 od-roominfo">
+        <p class="qt-font16 clearfix">
+        <span class="qt-fl">$!data.order.hotelInfo.hotelName</span>
+        #if(!$req.type || $!req.type !=2)
+            #if($orderInfo.commentable && $!req.cookieBdSource != "wechat_public")
+                #if(!$!commented)
+                    <a href="/hotel/hotelcomment?r=2&seq=$!data.order.hotelInfo.hotelSeq&hotelName=$!data.order.hotelInfo.hotelName&orderNum=$orderInfo.orderNo&checkInDate=$orderInfo.checkIn&wrapperId=$!req.wrapperId"
+                    class="qt-fr qt-font12 qt-h2half">
+                        <span class="qt-middle">去点评</span>
+                        <span class="icon arrow-right"></span>
+                    </a>
+                #end
+            #end
+        #end
+        </p>
+        <p class="qt-grey">$!data.order.hotelInfo.hotelAddress</p>
+        <p class="qt-font14">$!data.order.hotelInfo.roomName<br/>
+        ##钟点房
+        #if($!req.type && $!req.type == 2)
+        <p class="staytime">
+            <span>$orderInfo.checkIn</span>
+            <span>$!data.order.hoursRoomCheckInTimeBucket</span>
+            <span>$orderInfo.staytime*$orderInfo.bookNum间</span>
+        </p>
+        #else
+        <p class="staytime">
+            <span>$orderInfo.staytime</span>
+        </p>
+        #end
+        <p class="hotelinfo">
+            #if($!data.order.hotelInfo.bedType&&$!data.order.hotelInfo.bedType!='')
+            <span>$!data.order.hotelInfo.bedType</span>
+            #end
+            #if($!data.order.hotelInfo.wifi&&$!data.order.hotelInfo.wifi!='')
+            <span>$!data.order.hotelInfo.wifi</span>
+            #end
+            #if($!data.order.hotelInfo.webfree&&$!data.order.hotelInfo.webfree!='')
+            <span>$!data.order.hotelInfo.webfree</span>
+            #end
+            #if($!data.order.hotelInfo.breakfast&&$!data.order.hotelInfo.breakfast!='')
+            <span>$!data.order.hotelInfo.breakfast</span>
+            #end
+        </p>
+        <p class="userinfo">
+            #if($orderInfo.guestNames)
+            <span>
+                #foreach($!guest in $orderInfo.guestNames)
+                    $!guest
+                #end
+            </span>   
+            #end
+            #if($orderInfo.contactPhoneObj.display&&$orderInfo.contactPhoneObj.display!='')
+            <span>$orderInfo.contactPhoneObj.display</span>
+            #end
+            #if($orderInfo.contactEmail && $orderInfo.contactEmail != '')
+                <span>$orderInfo.contactEmail</span>
+            #end
+        </p>
+        #if($orderInfo.otherRequire&&$orderInfo.otherRequire!='')
+        <div class="showrequire">
+            <p class="qt-hide requirecontent">$orderInfo.otherRequire</p>
+            <p class="icon arrow-down"></p>  
+        </div>  
+        #end
+        <div class="qt-bt-x1 qt-font14 qt-pt10 qt-mt10 otherinfo">
+            <div class="otherinfoitem" data-type="hotel" data-city="$!data.order.hotelInfo.cityName" data-seq="$!data.order.hotelInfo.hotelSeq" data-hotelname="$!data.order.hotelInfo.hotelName" data-orderno="$orderInfo.orderNo" data-firstroomname="$!data.order.hotelInfo.roomName">
+                <span class="icon q-hotel" ></span>
+                <span class="qt-middle">酒店</span>
+            </div>
+            <div class="otherinfoitem">
+                <a class=" qt-black" href="tel:$!data.order.hotelInfo.hotelPhone">
+                    <span class="icon phone"></span>
+                    <span class="qt-middle">联系</span>
+                </a>
+            </div>
+            
+            ##<li class="otherinfoitem" data-type="location" data-hotelname="$!data.order.hotelInfo.hotelName" 
+            ##data-gpoint="$!data.order.hotelInfo.gpoint" data-checkin="$orderInfo.checkIn" 
+            ##data-checkout="$orderInfo.checkOut" data-seq="$!data.order.hotelInfo.hotelSeq">
+                ##<span class="icon q-discover-hotel"></span>
+                ##<span class="qt-middle">导航</span>
+            ##</li>
+            ##<li class="otherinfoitem">
+                ##<span class="icon q-near-hotel"></span>
+                ##<span class="qt-middle">周边</span>
+            ##</li>
+        </div>
+    </div>
+
+    ##发票信息  
+    #set($invoiceInfo=$!data.order.invoiceInfo)  
+    #if($invoiceInfo.invoiceGetType && $!invoiceInfo.invoiceGetType!=0)
+        <div class="od-block qt-mt10 od-invoiceinfo ">
+            <div class="qt-pt10 qt-pb10 qt-grey">发票信息</div>
+            #if($invoiceInfo.invoiceGetType==1 || $invoiceInfo.invoiceGetType==6)
+                <div>
+                    <p>
+                       <span class="left qt-grey">发票金额</span>
+                        <span class="right">$invoiceInfo.invoicePrice（票面金额）</span> 
+                    </p>
+                </div>
+                <div class="qt-mt5">
+                    <p>
+                        <span class="left qt-grey">发票抬头</span>
+                        <span>$invoiceInfo.invoiceTitle</span>   
+                    </p>             
+                </div>
+                <div class="showinvoicedetail">
+                    <div class="qt-hide invoicedetail">
+                        #if($invoiceInfo.invoiceType&&$invoiceInfo.invoiceType!='')
+                        <p>
+                            <span class="left qt-grey">发票类型</span>
+                            <span class="right">$invoiceInfo.invoiceType</span>
+                        </p>
+                        #end
+                        #if($invoiceInfo.invoiceContent&&$invoiceInfo.invoiceContent!='')
+                        <p>
+                            <span class="left qt-grey">发票内容</span>
+                            <span class="right">$invoiceInfo.invoiceContent</span>
+                        </p>
+                        #end
+                        #if($invoiceInfo.postType&&$invoiceInfo.postType!='')
+                        <p>
+                            <span class="left qt-grey">配送方式</span>
+                            <span class="right">
+                                $invoiceInfo.postType
+                                #if($invoiceInfo.invoicePostMoney&&$invoiceInfo.invoicePostMoney!='')
+                                <span>（￥$invoiceInfo.invoicePostMoney元配送费）</span>
+                                #end
+                            </span>
+                        </p>
+                        #end
+                        #if($invoiceInfo.invoiceContactName)
+                        <p>
+                            <span class="left qt-grey">收件人</span>
+                            <span class="right">$invoiceInfo.invoiceContactName</span>
+                        </p>
+                        #end
+                        #if($invoiceInfo.invoiceContactPhone)
+                        <p>
+                            <span class="left qt-grey">手机号码</span>
+                            <span class="right">$invoiceInfo.invoiceContactPhone</span>
+                        </p>
+                        #end
+                        #if($invoiceInfo.postAddress)
+                        <p>
+                            <span class="left qt-grey">收件地址</span>
+                            <span class="right">$invoiceInfo.postAddress</span>
+                        </p>
+                        #end
+                        #if($invoiceInfo.invoicePostWarmTips&&$invoiceInfo.invoicePostWarmTips!='')
+                        <p>
+                            <span class="left qt-grey">温馨提示</span>
+                            <span class="right js-invoicewarmtip"></span>
+                        </p>
+                        #end
+                    </div>
+                    <div >
+                        <span class="icon arrow-down"></span>
+                    </div>
+                </div>
+            #elseif($invoiceInfo.invoiceGetType==5)
+                <div class="qt-font14 qt-black">
+                    $invoiceInfo.invoiceGetTypeDesc
+                </div>
+                <div class="qt-mt5">
+                    <span class="left qt-grey">发票抬头</span>
+                    <span>$invoiceInfo.invoiceTitle</span>               
+                </div>
+            #else
+                <div class="qt-font14 qt-black">
+                    $invoiceInfo.invoiceGetTypeDesc
+                </div>
+            #end
+        </div>
+    #end
+
+    ##订单信息,区分booking订单和非booking订单
+    <div class="od-block qt-mt10 od-orderinfo">
+        #if($!data.order.otaInfo.otaPhone&&$!data.order.otaInfo.otaPhone!='')
+        <p class="clearfix qt-pt10 qt-pb10">
+            <span class="qt-fl qt-grey">订单信息</span>
+            ##<a href="tel:$!data.order.otaInfo.otaPhone" class="qt-fr qt-blue telagent">
+                ##<span class="icon phone"></span>
+                ##<span class="qt-middle">拨打代理商电话</span>
+            ##</a>
+        </p>
+        #else
+        <p class="qt-grey">订单信息</p>
+        #end
+        #if(!$!data.isBookingWrapper)
+        <p>
+            <span class="left qt-grey">订单号</span>
+            <span class="right">$orderInfo.orderNo</span>
+        </p>
+        <p>
+            <span class="left qt-grey">代理商</span>
+            <span class="right">
+                $!data.order.otaInfo.otaName
+                #if($!data.order.otaInfo.otaLogo && $!data.order.otaInfo.otaLogo != "")
+                <img class="od-h-otalogo" src="$!data.order.otaInfo.otaLogo" />
+                #end
+            </span>
+        </p>
+        <p>
+            <span class="left qt-grey">下单时间</span>
+            <span class="right">$orderInfo.orderDate</span>
+        </p>
+        #else
+         <p>
+            <span class="left qt-grey">去哪儿网订单号</span>
+            <span class="right" >$orderInfo.orderNo</span>
+        </p>
+        <p>
+            <span class="left qt-grey">代理商</span>
+            <span class="right">$!data.order.otaInfo.otaName
+             #if($!data.order.otaInfo.otaLogo && $!data.order.otaInfo.otaLogo != "")
+                <img class="od-h-otalogo" src="$!data.order.otaInfo.otaLogo" />
+            #end
+            </span>
+        </p>
+        <p>
+            <span class="left qt-grey">Booking.com预订编码</span>
+            <span class="right">$orderInfo.otaOrderNo</span>
+        </p>
+        <p>
+            <span class="left qt-grey">Booking.com订单查询密码</span>
+            <span class="right">$orderInfo.otaOrderNoCode</span>
+        </p>
+        #end
+    </div>
+
+    ##温馨提示
+    #if($orderInfo.aheadWarmTips && $orderInfo.aheadWarmTips != "")
+    <div class="qt-mt10 qt-pb10 qt-pr10 qt-pl10 qt-pt10 qt-lh qt-font12 qt-grey ">
+        温馨提示：<br/>
+        $orderInfo.aheadWarmTips
+    </div>
+    #end
+    #if($orderInfo.activityDesc&&$orderInfo.activityDesc!="")
+    <div class="qt-mt10 qt-pb10 qt-pr10 qt-pl10 qt-pt10 qt-1h qt-font12 qt-grey">
+        $orderInfo.activityDesc
+    </div>
+    #end
+
+    ##其他帮助
+    #set($servicePhones=$data.order.servicePhones)
+    #if($servicePhones&&$servicePhones!='')
+        #foreach($info in $servicePhones)
+            #if($!info.title && $!info.title != '')
+            <div class="qt-grey qt-font12 qt-plr10 qt-mt10 qt-mb10">$!info.title</div>
+            <div class="od-otherhelp" >
+                <a href="javascript:void(0);" class="servicephones" data-url="tel:$!info.telephone">
+                    $!info.subTitle
+                </a>
+            </div>
+            #end
+            #if($!info.httpMenu && $!info.httpUrl && $!info.httpMenu != '' && $!info.httpUrl != '')
+            <div class="qt-btop qt-blr od-otherhelp">
+                <a href="javascript:void(0);" class="servicephones" data-url=$!info.httpUrl>$!info.httpMenu</a>
+            </div>
+            #end
+        #end
+    #end
+
+    ##打车去酒店
+    #if($!data.checheUrl && $!data.checheUrl!="")
+        <div class="qt-mt10 od-otherhelp">
+            <a href="javascript:void(0);" class="servicephones" data-url="$!data.checheUrl">打车去酒店</a>
+        </div>
+    #end
+#end

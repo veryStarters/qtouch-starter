@@ -1,0 +1,36 @@
+.qt-multiselector {
+    .btn {
+        position: relative;
+        height: 35px;
+        line-height: 35px;
+        color: #444;
+        flex: 1;
+        text-align: center;
+        margin-left: -1px;
+        &.lt {
+            border-radius: 5px 0 0 5px;
+        }
+        &.rb {
+            border-radius: 0 5px 5px 0;
+        }
+        &.choose {
+            border-color: #25a4bb;
+            &+div {
+                border-left-color: transparent;
+            }
+        }
+        &:first-child{
+            min-width: 50px;
+            //flex: inherit;
+        }
+    }
+    .btn-more {
+        margin-left: 10px;
+        width: 45px;
+        flex: inherit;
+        border-color: #e8e8e8 !important;
+        &.choose {
+            border-color: #25a4bb !important;
+        }
+    }
+}

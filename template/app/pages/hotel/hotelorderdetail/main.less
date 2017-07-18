@@ -1,0 +1,205 @@
+@import "sub-pages/order-status/order-status";
+// @import "../../common/sub-pages/map/main";
+
+html, .qt-wrapper, .qt-body {
+    background: #f3f3f3;
+}
+.icon{
+    vertical-align:middle;
+}
+
+.qt-btns {
+    padding: 5px 0;
+    & .btn.border{
+        border: 1px solid #cacaca;
+    }
+}
+.qt-header{
+    background-color: #fff;
+    color: #000;
+}
+.qt-h2half{
+    line-height: 2.5;
+}
+.qt-plr10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.qt-mt5 {
+    margin-top: 5px;
+}
+.qt-mb5 {
+    margin-bottom: 5px;
+}
+.qt-ml25{
+    margin-left: 25px;
+}
+.qt-bt-dash {
+    border-bottom: 1px dashed #adadad;
+}
+.od-block {
+    padding: 10px;
+    line-height: 2;
+    background: #fff;
+    font-size: 12px;
+}
+
+// 代理商logo
+.od-otalogo {
+    width: 44px;
+}
+// 提示
+.od-tip,.od-cashbacktip{
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+    background-color: #fff5cd;
+}
+// 代理商logo-标题
+.od-h-otalogo{
+    width: 44px;
+}
+// 返现提示
+.od-cashbacktip{
+    background-color: #fff;
+    color:#ffb434;
+}
+
+// 费用明细弹框
+.od-detailpop{
+    padding: 20px;
+    line-height: 1.5;
+    .pricedetail{
+        display: flex;
+        .dashedline{
+            border-bottom: 1px dashed #cacaca;
+            height: 14px;
+            flex:1;
+        }
+    }
+    .ruletip{
+        margin: 20px 0;
+    }
+}
+// 房间信息
+.od-roominfo{
+    .staytime,.hotelinfo,.userinfo{
+        color: #555;
+    }
+    .hotelinfo,.userinfo{
+        margin-left:-5px;
+        span{
+            padding: 0 5px;
+            &:not(:last-child) {
+                border-right: 1px solid #555;
+            }
+        }   
+    }
+    .showrequire{
+        .icon{
+            color: #25a4bb;
+            position: relative;
+            left: 45%;
+        }
+        .requirecontent{
+            color:#555;
+        }
+    }
+    .otherinfo{
+        display: flex;
+        .otherinfoitem{
+            flex:1;
+            text-align: center;
+            span{
+                vertical-align: middle;
+            }
+            &:not(:last-child){
+                border-right: 1px solid #cacaca;
+            }
+        }
+    }
+}
+// 订单状态
+.od-orderstatus{
+    background-color: #17A4BD;
+    color: #fff;
+}
+// 订单支付状态
+.od-orderpaystatus{
+    .canceltip{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+// button
+.questionbtn{
+    display:inline-block;
+    border-radius: 2px;
+    border: 1px solid #cacaca;
+    padding: 0 5px;
+    margin: 5px 5px 5px 0;
+    &.noborder{
+        border:none;
+    }
+}
+// 发票信息
+.od-invoiceinfo{
+    p span{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .left{
+        width: 20%;
+
+    }
+    .right{
+        width: 70%;
+    }
+    .showinvoicedetail{
+        .icon{
+            color: #25a4bb;
+            position: relative;
+            left: 48%;
+        }
+    }
+}
+// 订单信息
+.od-orderinfo{
+    p span{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .left{
+        width: 30%;
+    }
+    .right{
+        width: 60%;
+    }
+}
+// 其他帮助
+.od-otherhelp a {
+    display: block;
+    font-size: 14px;
+    line-height: 3;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid #25a4bb;
+    border-radius: 5px;
+}
+
+// 错误提示
+.load-failed {
+    display: block;
+    width: 100px;
+    height: 60px;
+    margin: 20% auto 0;
+    background-image: url("http://simg1.qunarzz.com/site/images/wap/hlist/failed-bg.png");
+    background-size: 100% 100%;
+}
+.errmsg {
+    padding-top: 10px;
+    line-height: 3em;
+    text-align: center;
+}
+

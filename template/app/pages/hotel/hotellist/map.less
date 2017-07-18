@@ -1,0 +1,134 @@
+.map-content{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    #bmap {
+        width: 100%;
+        height: 100%;
+        .label {
+            position: relative;
+            background: #25a4bb;
+            text-align: center;
+            width: 60px;
+            height: 20px;
+            line-height: 20px;
+            color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+            font-size: 12px;
+            em {
+                font-style: normal;
+            }
+            &:after {
+                width: 6px;
+                height: 6px;
+                display: inline-block;
+                position: absolute;
+                content: '';
+                -webkit-transform: rotate(45deg);
+                background: #25a4bb;
+                bottom: -3px;
+                left: 50%;
+                margin-left: -4px;
+            }
+            //最低价
+            &.bg-min{
+                background: #ff6600;
+                &:after {
+                    background: #ff6600;
+                }
+            }
+            //满房或者未报价
+            &.bg-empty{
+                background: #949494;
+                &:after {
+                    background: #949494;
+                }
+            }
+            //标注
+            &.marker{
+                width: 150px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                background: #efeff0;
+                color: #333;
+                &:after{
+                    background: none;
+                }
+            }
+        }
+        .iw-cnt{
+            .iw-title{
+                width: 200px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                font-weight: bold;
+                display: block;
+            }
+            .iw-desc{
+                display: block;
+                .iw-poi-cnt{
+                    width: 220px;
+                    margin-top: 10px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .get-location{
+        position: absolute;
+        left: 30px;
+        bottom: 60px;
+        font-size: 30px;
+        &.loading{
+            border-radius: 5px;
+            padding: 5px;
+            background: rgba(0,0,0,.5);
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+    .pages{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        .disabled {
+            color: #bbb;
+            i:active{
+                opacity: 1 !important;
+            }
+        }
+    }
+    .loading{
+        padding-top: 100px;
+        text-align: center;
+        p{
+            text-align: center;
+        }
+    }
+    .tip{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        background: rgba(0,0,0,.5);
+        &.longpress{
+            top: 10px;
+            left: 50%;
+            margin-left: -73px;
+            border-radius: 5px;
+            width: 146px;
+            z-index: 5;
+        }
+    }
+    &.category-fix{
+        margin-top: -79px;
+    }
+}

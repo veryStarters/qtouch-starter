@@ -1,0 +1,46 @@
+<ul class="qt-grid qt-center qt-font14 qt-bb-x1 other-link">
+    <li class="col3">
+        <a href="$!commonParam.host.userCenter/mobile/login.jsp">
+            <p>登录</p>
+        </a>
+    </li>
+    <li class="col3">
+        <a href="$!commonParam.host.touch/h5/user/usercenter">
+            <p>我的订单</p>
+        </a>
+    </li>
+    <li class="col3">
+        <a href="$!commonParam.host.touch/h5/recent">
+            <p>最近浏览</p>
+        </a>
+    </li>
+    <li class="col3">
+        <a href="$!commonParam.host.touch/h5/about">
+            <p>关于我们</p>
+        </a>
+    </li>
+</ul>
+
+<ul class="qt-grid qt-center qt-font14 other-link mr50">
+    <li class="col6">
+        <a href="$!commonParam.host.touch/h5/">
+            <p>触屏版</p>
+        </a>
+    </li>
+    <li class="col6">
+        <a href="//www.qunar.com/index.htm?from=mobile&amp;qn163=1" onclick="document.cookie='QN163=1;domain=.qunar.com;path=/;expires=' + (function(){var d = new Date();d.setTime(d.getTime()+6*3600*1000); return d.toGMTString() })();">
+            <p>电脑版</p>
+        </a>
+    </li>
+</ul>
+
+<ul class="qt-grid qt-font12 qt-lh2">
+    <li class="col7 qt-grey">
+        <p class="qt-center">Qunar 京ICP备05021087</p>
+    </li>
+    <li class="col4 qt-left">
+        <a href="$!commonParam.host.touch/h5/feedback">
+            <p class="qt-center">意见反馈</p>
+        </a>
+    </li>
+</ul>

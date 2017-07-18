@@ -1,0 +1,102 @@
+#qt_page_keyWordPage {
+    .qt-page-header, .qt-sub-header {
+        background: #f5f5f5;
+        color: #686868;
+    }
+    .keyword-header{
+        width: 95%;
+    }
+    .qt-input {
+        .icon {
+            top: 1px;
+            width: 25px;
+            &.search {
+                left: 8px;
+                color:#666;
+            }
+            &.cancel-circle {
+                position: absolute;
+                padding: 0;
+                height: inherit;
+                right: 8px;
+                font-size: 14px;
+            }
+        }
+        input{
+            border-width: 0;
+            background: #e0e0e0;
+            height: 32px;
+            padding: 0 30px 0 26px;
+        }
+    }
+
+    .keyword-select {
+        padding: 0 60px 10px 10px;
+        top: 44px;
+        width: 100%;
+        margin-left: 25px;
+        font-size: 12px;
+
+    }
+    .sure-btn {
+        position: absolute;
+        line-height: 50px;
+        font-size: 16px;
+        right: -4px;
+        top: 0;
+    }
+
+
+    .m-keyword {
+        .titleicon{
+          font-size: 20px;
+          vertical-align: middle;
+        }
+        .box {
+            .title {
+                height: 32px;
+                line-height: 40px;
+                span {
+                    font-weight: bold;
+                }
+                .more {
+                    font-weight: normal;
+                }
+            }
+            .keywordlist{
+                .keywordline{
+                  display: table;
+                  width: 100%;
+                  &>div{
+                    display:table-cell;
+                    width: 25%;
+                    height: 40px;
+                    padding: 0 5px;
+                    vertical-align: middle;
+                  }
+
+                }
+            }
+            .textOverflow {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        .empty{
+            background: #fff;
+            padding-top: 50px;
+            p{
+                text-align: center;
+                img{
+                    width: 92px;
+                    height: 55px;
+                }
+                &:first-child {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+}

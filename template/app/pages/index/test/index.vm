@@ -1,0 +1,60 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿网--聪明你的旅行' )
+
+##<!--样式模块定义-->
+#define ( $style )
+    <link rel="stylesheet" href="/pages/index/test/main.css"/>
+<style type="text/css">
+    body, html{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+    #panorama {width:100%; height: 500px;}
+    #result {width:100%;font-size:12px;}
+</style>
+#end
+
+##<!--头部模块定义-->
+#define ( $header )
+#parse('pages/index/test/vm/header.vm')
+#end
+
+
+#define ( $subHeader )
+##<!--副头部模块定义-->
+#parse('pages/index/test/vm/sub-header.vm')
+#end
+
+##<!--主内容模块定义-->
+#define ( $body )
+#parse('pages/index/test/vm/body.vm')
+#end
+
+##<!--尾部模块定义-->
+#define ( $footer )
+#parse('pages/index/test/vm/footer.vm')
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+    <script src="/pages/index/test/main.js"></script>
+    <script src="http://m.qunar.com/zhuanti/QunarAPI_1.0.16.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4a&ak=3bTDeMOIWun9DELpjhsfeO9W"></script>
+<script>
+    var map = new BMap.Map('panorama');
+    map.centerAndZoom(new BMap.Point(120.305456, 31.570037), 12);
+    map.addTileLayer(new BMap.PanoramaCoverageLayer());
+
+    var panorama =window.panorama = new BMap.Panorama('panorama');
+    panorama.setPov({heading: -40, pitch: 6});
+    document.getElementById("setPanoramaByLocation").onclick = function(){
+        panorama.setPosition(new BMap.Point(120.320032, 31.589666)); //根据经纬度坐标展示全景图
+    };
+    document.getElementById("setPanoramaById").onclick = function(){
+        panorama.setId('0100010000130501122416015Z1');//根据全景id展示全景图
+    };
+    document.getElementById("setPanoramaById1").onclick = function(){
+        panorama.setId('0300220000130910053359018IN');//根据全景id展示全景图
+    };
+</script>
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

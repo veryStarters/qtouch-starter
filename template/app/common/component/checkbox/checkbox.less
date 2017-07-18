@@ -1,0 +1,24 @@
+.qt-checkbox input[type=checkbox] {
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  border: 1px solid #aaa;
+  overflow: hidden;
+  margin-top: -4px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  outline: 0;
+  background: 0 0;
+  padding: 0px;
+}
+.qt-checkbox input[type=checkbox]:checked:before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 5px;
+  background: transparent;
+  border: 3px solid #25A4BB;
+  border-top: none;
+  border-right: none;
+  transform: rotate(-45deg);
+}

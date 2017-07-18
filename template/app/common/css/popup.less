@@ -1,0 +1,56 @@
+.qt-popup {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    &.active {
+        z-index: 51;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .qt-popup-wrap {
+        margin: 0 auto;
+        border-radius: 5px;
+        //background: #fff;
+        position: relative;
+        padding-top: 20px;
+        .popup-header {
+            padding: 0 20px 5px 16px;
+        }
+        .popup-content {
+            line-height: 18px;
+            padding: 5px 16px 18px;
+            font-size: 14px;
+            //padding: 10px;
+            overflow-y: auto;
+            //border-top: 1px solid #f3f3f3;
+            //border-bottom: 1px solid #f3f3f3;
+            word-break: break-all
+        }
+        .popup-btns {
+            position: relative;
+            width: 100%;
+            font-size: 16px;
+            line-height: 44px;
+            text-align: center;
+            .qt-bl-x1:before {
+                border-color: #d4d4d4;
+            }
+            //margin-top: 10px;
+            //padding: 10px 20px 0 20px;
+            //bottom: 10px;
+        }
+        //.close-btn {
+        //    position: absolute;
+        //    top: 0;
+        //    right: 0;
+        //    margin: 8px;
+        //    font-size: 18px;
+        //}
+    }
+}

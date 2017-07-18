@@ -1,0 +1,38 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿网--聪明你的旅行' )
+
+##<!--样式模块定义-->
+#define ( $style )
+    <link rel="stylesheet" href="/pages/index/index/main.css"/>
+    <link rel="stylesheet" href="http://activity.qunar.com/css/search-page.css"/>
+#end
+
+##<!--头部模块定义-->
+##define ( $header )
+##parse('pages/index/index/vm/header.vm')
+##end
+
+
+#define ( $subHeader )
+##<!--副头部模块定义-->
+#parse('pages/index/index/vm/sub-header.vm')
+#end
+
+##<!--主内容模块定义-->
+#define ( $body )
+#parse('pages/index/index/vm/body.vm')
+#end
+
+##<!--尾部模块定义-->
+#define ( $footer )
+#parse('pages/index/index/vm/footer.vm')
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+    <script src="/pages/index/index/main.js"></script>
+    <script src="http://activity.qunar.com/js/search-page.js"></script>
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

@@ -1,0 +1,39 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿酒店 - 酒店预订, 酒店查询 -  去哪儿网 Qunar.com' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<link rel="stylesheet" href="/pages/hotel/index/main.css"/>
+#end
+
+##<!--头部模块定义-->
+##define ( $header )
+#if(!$!commonParam.skin.header)
+##parse('pages/hotel/index/vm/header.vm')
+#end
+##end
+
+##<!--副头部模块定义-->
+##define ( $subHeader )
+##parse('pages/hotel/index/vm/sub-header.vm')
+##end
+
+##<!--主内容模块定义-->
+#define ( $body )
+#parse('pages/hotel/index/vm/body.vm')
+#end
+
+##<!--尾部模块定义-->
+#define ( $footer )
+#parse('pages/hotel/index/vm/footer.vm')
+#end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script src="http://api.map.baidu.com/api?v=1.4&ak=n5As0pr2HsPilhsnOqjlcyVX"></script>
+<script src="/pages/hotel/index/main.js"></script>
+<script src="http://m.qunar.com/zhuanti/20160317-redLayer.js"></script>
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

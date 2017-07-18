@@ -1,0 +1,141 @@
+#if($!req.couponsSelected && $!req.couponsSelected != -1)
+<div class="coupons-box">
+    <div class="left qt-font14">
+        <div class="open #if($!req.couponsSelected == 0)qt-hide #end">
+            <p><span>已为您筛选可用</span><span class="qt-font12 qt-border-x1 r2 qt-orange tag">友谊券</span><span>的酒店</span></p>
+            <p class="qt-font12 qt-grey">关闭开关查看更多酒店</p>
+        </div>
+        <div class="close #if($!req.couponsSelected == 1)qt-hide #end">
+            <p><span>打开开关,为你筛选可用</span><span class="qt-font12 qt-border-x1 r2 qt-orange tag">友谊券</span><span>的酒店</span></p>
+        </div>
+    </div>
+    <div class="coupons-btn">
+        <span class="qt-switch #if($!req.couponsSelected == 1)active #end"><span class="switch-handle"></span></span>
+    </div>
+</div>
+#end
+
+<div class='list-content #if($!req.category=="A" || $!req.category=="L")category-fix#end'>
+    #if(!$!data || !$!data.hotels || $!data.hotels.size() <= 0)
+        <div class="tips"  style="margin-bottom: 100px">
+            <p class="load-failed"></p>
+            <p class="qt-font12 qt-center info">查询无结果，请修改查询条件后重试</p>
+        </div>
+        <div class="content">
+        <ul></ul>
+        </div>
+        #renderAd('hotel-list-bottom-ad',$!commonParam.ads.hotel_list_bottom_ad)
+    #else
+        #renderAd('hotel-list-top-ad',$!commonParam.ads.hotel_list_top_ad)
+        <div class="content">
+        <ul>
+        #set($clickNum = ($!req.page - 1) * 15)
+        #foreach($hotel in $!data.hotels)
+        #set($attr=$!hotel.attrs)
+        <li class="qt-bb-x1" data-id="$hotel.id">
+            #set($clickNum = $clickNum + 1)
+            <div class="list-img">
+                #set($url= $attr.get("imageID"))
+                #if($url && $url != '')
+                <img src="$url" />
+                #else
+                <img src="http://simg1.qunarzz.com/site/images/wap/touch/images/default.png"  />
+                #end
+            </div>
+            <div class="list-info">
+                <p class="qt-black hotel-title">$!attr.hotelName</p>
+                <p class="base-info clearfix">
+                    <span class="left">
+                        #if($!req.type == 2)
+                            #if($!attr.CommentScore != "0.0")
+                                <span class="qt-blue qt-font14">$!attr.CommentScore分</span>
+                            #else
+                                暂无评论
+                            #end
+                            #foreach($service in $!hotel.services)
+                                <span class="icon $!service.css"></span>
+                            #end
+                        #else
+                            #if($!attr.CommentScore != "0.0" && $!attr.CommentCount != "0")
+                                <span class="qt-blue qt-font14">$!attr.CommentScore分</span> / $!attr.CommentCount条评论
+                            #elseif($!attr.CommentScore != "0.0")
+                                <span class="qt-blue qt-font14">$!attr.CommentScore分</span>
+                            #elseif($!attr.CommentCount != "0")
+                                $!attr.CommentCount条评论
+                            #else
+                                暂无评论
+                            #end
+                        #end
+                    </span>
+                    #if($!hotel.price > 0)
+                    <span class="right"><span class="qt-orange qt-mr5 price"><span class="qt-grey qt-font12">#if($!hotel.hour && $!hotel.hour != "")$!hotel.hour 小时 / #end</span><i>&yen</i>$hotel.price</span>起</span>
+                    #elseif( -1 == $!hotel.price )
+                    <span class="right"><span class="qt-grey qt-font12">满房</span></span>
+                    #else
+                    <span class="right"><span class="qt-grey qt-font12">暂无报价</span></span>
+                    #end
+
+                </p>
+                <p class="list-tips clearfix">
+                    #if($!req.type == 2)
+                        <span>$!hotel.transactCheckinTime</span>
+                        #if($!hotel.lmOldPrice != "" && $!hotel.lmEcPrice != "")
+                        <span class="qt-fr lm-price"><del class="qt-mr5">原价<i>&yen</i>$!hotel.lmOldPrice</del><span class="qn_blue">省<i class="mon">&yen</i>$hotel.lmEcPrice</span></span>
+                        #else
+                        #foreach($tag in $!hotel.tagList)
+                        <span class="qt-border-x1 r5 $!tag.color tag">$!tag.label</span>
+                        #end
+                        #end
+                    #else
+                        <span>$!attr.dangciText</span>
+                        #foreach($service in $!hotel.services)
+                            <span class="icon $!service.css"></span>
+                        #end
+                        #if($!hotel.lmOldPrice != "" && $!hotel.lmEcPrice != "")
+                            <span class="qt-fr lm-price"><del class="qt-mr5">原价<i>&yen</i>$!hotel.lmOldPrice</del><span class="qn_blue">省<i class="mon">&yen</i>$hotel.lmEcPrice</span></span>
+                        #else
+                            #foreach($tag in $!hotel.tagList)
+                                <span class="qt-border-x1 r5 $!tag.color tag">$!tag.label</span>
+                            #end
+                        #end
+                    #end
+
+                </p>
+                <p class="location">$!hotel.showAddr</p>
+            </div>
+        </li>
+
+        ##if($!data.hotKey && $!data.hotKey.size()>0 && $velocityCount == 10)  ## 热词卡
+
+            ##<div class="qt-mlr10 qt-mt10 clearfix hotkeywords">
+                ##foreach($tab in $!data.hotKey)
+                ##if($velocityCount < 9)
+                ##<p><a class="qt-border-x1 r5 hotkeyword" data-qvalue="$!{tab.displayName}">$!{tab.displayName}</a></p>
+                ##end
+                ##end
+            ##</div>
+
+            ##<div class="qt-bb-x1 toKeywordPage">
+                ##<p>点击查看更多热门关键词</p>
+            ##</div>
+
+        ##end
+
+        #end
+        </ul>
+        <div class="qt-center qt-blue load-more qt-mb10">
+            #if($!data.totalPage == 1)
+            已加载全部
+            #else
+            查看更多<i class="qt-hide icon spinner"></i>
+            #end
+        </div>
+    </div>
+        #renderAd('hotel-list-bottom-ad',$!commonParam.ads.hotel_list_bottom_ad)
+    #end
+</div>
+<!--地图wrap-->
+<div class='map-content qt-hide #if($!req.category=="A" || $!req.category=="L")category-fix#end'>
+    <div class="loading qt-grey qt-font14"></div>
+</div>
+<div class="qt-hide qt-loading"></div>

@@ -1,0 +1,15 @@
+<nav class="left icon previous"></nav>
+#if($!req.wrapperId=="hta9008pb7i")
+<div class="qt-bb-x1 header-title"><img src="http://simg1.qunarzz.com/site/images/wap/hotelorder/bookingLogo3.png" /></div>
+#elseif($!req.wrapperId=="wiotatts073")
+<div class="qt-bb-x1 header-title"><img src="http://simg1.qunarzz.com/site/images/wap/touch/images/v2/images2x/Expedia-logo-640.png" /></div>
+#elseif($!req.wrapperId=="wiotatts101")
+<div class="qt-bb-x1 header-title"><img src="http://simg1.qunarzz.com/site/images/wap/touch/images/v2/images2x/agoda.com-640.png" /></div>
+#elseif($!req.wrapperId=="wiotatts099")
+<div class="qt-bb-x1 header-title"><img src="http://simg1.qunarzz.com/site/images/wap/touch/images/v2/images2x/640-otel_title_logo.png" /></div>
+#else
+<div class="qt-bb-x1 header-title">填写订单</div>
+#end
+#if($!commonParam.skin.orderLogin)
+<nav class="right login">登录</nav>
+#end

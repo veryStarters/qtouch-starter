@@ -1,0 +1,33 @@
+##<!--标题、变量定义-->
+#set( $g_title = '去哪儿狂撒千万份好礼，摇一摇，红包现金送不停！' )
+
+##<!--样式模块定义-->
+#define ( $style )
+<link rel="stylesheet" href="/pages/activity/lottery/myprizelist/main.css"/>
+#end
+
+##<!--头部模块定义-->
+## #define ( $header )
+## #end
+
+##<!--副头部模块定义-->
+##define ( $subHeader )
+##end
+
+##<!--主内容模块定义-->
+##define ( $body )
+##parse('pages/activity/lottery/myprizelist/vm/body.vm')
+##end
+
+##<!--尾部模块定义-->
+##define ( $footer )
+##end
+
+##<!--脚本模块定义-->
+#define ( $script )
+<script src="http://m.qunar.com/zhuanti/yaoyiyao_config_new.js"></script>
+<script src="/pages/activity/lottery/myprizelist/main.js"></script>
+#end
+
+##<!--渲染页面-->
+#render($style,$header,$subHeader,$body,$footer,$script)

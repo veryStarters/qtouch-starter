@@ -1,0 +1,99 @@
+.slideDownOut50 {
+  animation-name: slideDownOut50,fadeOut;
+}
+
+.slideDownIn50 {
+  animation-name: slideDownIn50,fadeIn;
+}
+
+.slideUpOut50 {
+  animation-name: slideUpOut50,fadeOut;
+}
+
+.slideUpIn50 {
+  animation-name: slideUpIn50,fadeIn;
+}
+
+.slideLeftFadeOut {
+  animation-name: slideLeftOut, fadeOut;
+}
+
+.slideLeftFadeIn {
+  animation-name: slideLeftIn, fadeIn;
+}
+
+.slideRightFadeOut {
+  animation-name: slideRightOut, fadeOut;
+}
+
+.slideRightFadeIn {
+  animation-name: slideRightIn, fadeIn;
+}
+
+.rotateFadeIn {
+  animation-name: rotateFadeIn,fadeIn;
+}
+
+.popup {
+  animation-name: popup;
+}
+
+@keyframes slideDownOut50 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 50%, 0);
+  }
+}
+
+@keyframes slideDownIn50 {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideUpOut50 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes slideUpIn50 {
+  0% {
+    transform: translate3d(0, 50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rotateFadeIn {
+  0% {
+    transform: translate3d(0, -100%, 0) rotateY(-120deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotateY(0deg);
+  }
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: scale3d(0, 0, 1);
+  }
+  70% {
+    opacity: 1;
+    transform: scale3d(1.1, 1.1, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}

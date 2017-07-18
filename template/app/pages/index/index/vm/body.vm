@@ -1,0 +1,186 @@
+#if($!commonParam.skin.appBanner)
+<div class="top-download qt-grid middle">
+    <div class="col2 qt-center"><i class="icon q-luotuo"></i></div>
+    <div class="col6">
+        <p class="qt-font14">去哪儿旅行</p>
+
+        <p class="qt-grey qt-font12">机票酒店、火车票、旅游</p>
+    </div>
+    <div class="col4 qt-center"><a href="/h5/download?immediate=1&bd_source=$!req.bdSource">立即下载</a></div>
+</div>
+#end
+
+
+<div class="">
+    <img height="120" width="100%" src="http://source.qunar.com/site/images/wap/home/recommend/small/hongniu1027.jpg"/>
+</div>
+
+
+<section class="m-search-page">
+    <div class="search-bar with-gray">
+            <span class="input-wrapper">
+                <i class="yo-ico">&#xf002;</i>
+                <label class="input">搜索旅行地/酒店/景点</label>
+            </span>
+    </div>
+</section>
+
+
+<ul class="mobile-module">
+    <li class="qt-grid">
+        <a class="col3 qt-bg-red" href="http://touch.gongyu.qunar.com/">
+            <i class="icon q-gongyu"></i>
+
+            <p>公寓</p>
+        </a>
+        <a class="col3 qt-bg-red" href="javascript:void(0);">
+            <i class="icon q-hourroom"></i>
+
+            <p>钟点房</p>
+        </a>
+        <a class="col3 qt-bg-purple" href="http://car.qunar.com/?from=9">
+            <i class="icon q-zhuce"></i>
+
+            <p>接送用车</p>
+        </a>
+        <a class="col3 qt-bg-purple"
+           href="//touch.qunar.com/h5/flight/bargainflight?startCity=北京&destCity=任意城市">
+            <i class="icon q-flight-disc"></i>
+
+            <p>特价机票</p>
+        </a>
+    </li>
+    <li class="qt-grid">
+        <a class="col6 row2 qt-bg-red" href="/hotel/">
+            <p class="text-left">酒店</p>
+            <i class="icon q-hotel"></i>
+        </a>
+        <a class="col6 row2 qt-bg-purple" href="//touch.qunar.com/h5/flight/">
+            <p class="text-left">机票</p>
+            <i class="icon q-flight"></i>
+        </a>
+    </li>
+    <li class="qt-grid">
+        <a class="col6 qt-bg-red v" href="http://touch.qunar.com/h5/hotel/lastminHotelCity?bd_source=touch">
+            <i class="icon q-tehui"></i>今日特惠
+        </a>
+        <a class="col6 qt-bg-deep-blue" href="http://touch.dujia.qunar.com/tuan.qunar?bd_source=touch">
+            <i class="icon q-tuan"></i>旅游团购
+        </a>
+    </li>
+    <li class="qt-grid">
+        <a class="col6 qt-bg-yellow" data-href="http://touch.piao.qunar.com/touch/index.htm?bd_source=touch">
+            <i class="icon q-menpiao"></i>景点门票
+        </a>
+        <a class="col6 qt-bg-deep-blue" href="http://touch.dujia.qunar.com/?bd_source=touch">
+            <i class="icon q-dujia"></i>旅游度假
+        </a>
+    </li>
+    <li class="qt-grid">
+        <a class="col6 qt-bg-yellow" href="http://cheche.qunar.com/?from=28&bd_source=touch">
+            <i class="icon q-cheche"></i>用车自驾
+        </a>
+        <a class="col6 qt-bg-deep-green" href="http://touch.qunar.com/h5/group/grouplist?from=28&bd_source=touch">
+            <i class="icon q-group"></i>团购
+        </a>
+    </li>
+    <li class="qt-grid">
+        <a class="col6 qt-bg-yellow" href="http://piao.qunar.com/touch/weekend/index.htm?in_track=t_sy_weekendtravel_touch">
+            <i class="icon q-weekend"></i>周末游
+        </a>
+        <a class="col6 qt-bg-deep-green" href="http://touch.travel.qunar.com/?bd_source=touch">
+            <i class="icon q-gonglue"></i>攻略
+        </a>
+    </li>
+    <li class="qt-grid">
+        <a class="col6 qt-bg-light-green" href="http://touch.train.qunar.com/?from=touchindex">
+            <i class="icon q-train"></i>
+            <span>火车票</span>
+        </a>
+        <a class="col6 qt-bg-deep-green" href="http://i.qunar.com/touch/index?from=28&bd_source=touch">
+            <i class="icon q-movie"></i>电影票
+        </a>
+    </li>
+    <li class="qt-grid">
+        <a class="col6 qt-bg-light-green" href="http://touch.train.qunar.com/?from=touchindex">
+            <i class="icon q-car"></i>汽车票
+        </a>
+        <a class="col6 qt-bg-blue" href="http://i.qunar.com/touch/index?from=28&bd_source=touch">
+        <i class="icon q-meishi"></i>美食
+        </a>
+    </li>
+    <li class="qt-grid">
+        <a class="col6 qt-bg-light-green" href="http://i.qunar.com/touch/index?from=28&bd_source=touch">
+            <i class="icon q-wifi"></i>导游WIFI
+        </a>
+        <a class="col3 qt-bg-blue" href="http://touch.dujia.qunar.com/visaChannel.qunar?bd_source=touch">
+            <i class="icon q-qianzhen"></i>
+
+            <p>签证</p>
+        </a>
+        <a class="col3 qt-bg-blue" href="http://guide.qunar.com/?bd_source=touch">
+            <i class="icon q-luotuoshu"></i>
+
+            <p>骆驼书</p>
+        </a>
+    </li>
+</ul>
+<ul class="qt-grid qt-center qt-font14 qt-bb qt-pb10">
+    <li class="col4">
+        <a>
+            <i class="icon user"></i>
+
+            <p>登录</p>
+        </a>
+    </li>
+    <li class="col4">
+        <a>
+            <i class="icon user"></i>
+
+            <p>我的订单</p>
+        </a>
+    </li>
+    <li class="col4">
+        <a>
+            <i class="icon user"></i>
+
+            <p>最近浏览</p>
+        </a>
+    </li>
+</ul>
+
+<p class="qt-center qt-pa10 qt-blue qt-font16 qt-bb qt-arrow r">
+    <a href="//touch.qunar.com/h5/software">精品软件推荐</a>
+</p>
+
+<!-- 唤起 app 首页 -->
+#if($commonParam.skin.callApp)
+<iframe id="mobileIframe" style="display:none"></iframe>
+<script>
+var frame = document.getElementById('mobileIframe'),
+        bdSource = '$!req.cookieBdSource',
+        iphoneScheme = 'qunariphone://home?module=main&cat=',
+        iphoneProScheme = 'qunariphonepro://home?module=main&cat=',
+        androidScheme = 'qunaraphone://home?module=main&cat=',
+        ua = navigator.userAgent,
+        isAndroid = /android/ig.test(ua),
+        isIos = /iphone|ipod/ig.test(ua);
+
+if(isIos){
+    frame.src = iphoneScheme + bdSource;
+}else if(isAndroid){
+    frame.src = androidScheme + bdSource;
+}
+setTimeout(function(){
+    !window.document.webkitHidden && setTimeout(openDPUrl, 400) ;
+},100);
+function openDPUrl() {
+    if(isIos) {
+        frame.src = iphoneProScheme + bdSource;
+    }
+}
+</script>
+#end
+
+#parse('pages/common/tpls/body-footer.vm')
+

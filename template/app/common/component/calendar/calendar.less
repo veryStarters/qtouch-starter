@@ -1,0 +1,168 @@
+#qtCalendarBox {
+	.c-header-fix {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 72px;
+		overflow: hidden;
+		z-index: 10;
+		background:#25a4bb;
+		.header {
+			display: flex;
+			height: 50px;
+			line-height: 50px;
+			.previous {
+				margin-left: 10px;
+				z-index:1;
+				color: #fff;
+			}
+		}
+		.sub-header {
+
+		}
+	}
+}
+.calendar-title {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	background: #17A4BD;
+}
+
+.calendar-head {
+	width: 100%;
+	.qt-week-title {
+		height: 22px;
+		table {
+			width: 100%;
+			td {
+				width: 40px;
+				height: 22px;
+				font-size: 12px;
+				text-align: center;
+				background: #17A4BD;
+				color: #fff;
+				&.weekend {
+					color: #f00;
+				}
+			}
+		}
+	}
+}
+
+.calendar-wrap {
+	position: absolute;
+	width: 100%;
+	min-height: 500px;
+	top: 72px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	table {
+		width: 100%;
+		thead {
+			td {
+				height: 39px;
+				font-family: arial;
+				background-color: #fff;
+			}
+			h5 {
+				margin: 0;
+				font-size: 18px;
+				line-height: 40px;
+				text-align: center;
+				font-weight: bold;
+				background: #fff;
+			}
+		}
+		tbody {
+			padding: 3px 0 0 3px;
+			background: #fff;
+			border-top: 0;
+			em {
+				font-style: normal;
+			}
+			.start-day-circle{
+				display: block;
+				width: 28px;
+				height: 28px;
+				position: absolute;
+				top: -46px;
+				background: #25a4bb;
+				border-radius: 50%;
+				left: 9px;
+				z-index: -1;
+			}
+		}
+		.days {
+			height: 56px;
+			font-size: 16px;
+			color: #8c8c8c;
+			border-top: 1px #eee solid;
+			td {
+				width: 40px;
+				background: #fff;
+				color: #000;
+				text-align: center;
+				padding-top: 5px;
+				p {
+					height: 28px;
+					line-height: 28px;
+				}
+				&.active p, &.hover p {
+					width: 28px;
+					margin: auto;
+					text-align: center;
+					border-radius: 50%;
+					background-color: #25a4bb;
+					color: #fff;
+					margin-bottom: 2px;
+				}
+				&.active span, &.hover span {
+					color: #25a4bb;
+					font-size: 14px;
+				}
+				&.disable {
+					color: #a7a7a7;
+					cursor: default;
+				}
+				&.checked p {
+					width: 28px;
+					margin: auto;
+					text-align: center;
+					border-radius: 50%;
+					margin-bottom: 2px;
+					color: #fff;
+					background-color: #cfcfcf;
+					cursor: default;
+				}
+				&.checked span {
+					color: #c7c7c7;
+					font-size: 14px;
+				}
+			}
+		}
+		td.weekend {
+			color: #f00;
+		}
+		td.holiday {
+			color: #f00;
+			font-size: 16px;
+		}
+		td.chs {
+			font-size: 14px;
+		}
+		td.weekday {
+			color: #000;
+		}
+	}
+
+}
